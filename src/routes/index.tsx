@@ -1,10 +1,13 @@
 import { Button } from '@mui/material';
 import { Routes, Route, Navigate} from 'react-router-dom';
+import { useAppThemeContext } from '../shared/contexts';
 
 export const AppRoutes = () => {
+    const {toggleTheme} = useAppThemeContext();
+ 
     return (
         <Routes>
-            <Route path="/" element={<Button variant='contained' color='primary'>Home</Button>} />
+            <Route path="/" element={<Button variant='contained' color='primary' onClick={toggleTheme}>tema</Button>} />
 
     {/* redireciona para a rota /Home caso o usuário digite uma rota inválida */}
             <Route path="*" element={<Navigate to="/"/>} />
