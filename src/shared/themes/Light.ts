@@ -6,7 +6,7 @@ export const LightTheme = createTheme({
             main: '#212121',
             dark: '#000000',
             light: '#484848',
-            contrastText: '#ffffff',       
+            contrastText: '#ffffff',
         },
         secondary: {
             main: '#f44336',
@@ -19,5 +19,5 @@ export const LightTheme = createTheme({
             paper: '#B0C4DE',
         },
     },
-    
-})
+
+});

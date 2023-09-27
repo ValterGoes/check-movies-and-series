@@ -9,8 +9,8 @@ export const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<Button variant='contained' color='primary' onClick={toggleTheme}>tema</Button>} />
 
-    {/* redireciona para a rota /Home caso o usuário digite uma rota inválida */}
+            {/* redireciona para a rota /Home caso o usuário digite uma rota inválida */}
             <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
     );
-}
+};
