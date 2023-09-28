@@ -1,7 +1,7 @@
 import { Avatar, Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import { useDrawerContext } from '../../contexts';
+import { useAppThemeContext, useDrawerContext } from '../../contexts';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 
 //faz a tipagem das opções do menu lateral
@@ -50,28 +50,63 @@ interface IMenuLateralProps {
 
 //cria o componente
 export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
+    // configura o tema
     const theme = useTheme();
     //verifica se a largura da tela é menor que 600px
     const smDown = useMediaQuery(theme.breakpoints.down('sm'));
-
     // controla o estado do menu lateral
     const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
- 
+    // controla o estado do tema
+    const { toggleTheme } = useAppThemeContext();
+    // pega o nome do tema
+    const { themeName } = useAppThemeContext();
+  
     return (
         <>
             {/* // sidebar */}
             <Drawer open={ isDrawerOpen } variant={smDown ? 'temporary' : 'permanent'} onClose={toggleDrawerOpen}>
+
                 {/* largura sidebar */}
-                <Box width={theme.spacing(28)} height="100%" display="flex" flexDirection="column">
-                    {/* Avatar */}
-                    <Box width="100%" height={theme.spacing(20)} display="flex" alignItems="center" justifyContent='center'>
-                        <Avatar alt='john Doo' src='/JohnDoo.jpg' sx={{ width: theme.spacing(15), height: theme.spacing(15)}} />
+                <Box width={theme.spacing(28)} height="100%" display="flex" flexDirection="column" >
+
+                    {/* Avatar  e Icone de Tema*/}
+                    <Box width="100%" height={theme.spacing(20)} display="flex">
+
+                        <Box width="25%" paddingLeft={1} paddingTop={2}>
+                            <List component='nav'>
+                                {themeName === 'dark' && (
+                                    <ListItemButton onClick={toggleTheme}>
+                                        <ListItemIcon>
+                                            <Icon>light_mode</Icon>
+                                        </ListItemIcon>
+                                        {/* <ListItemText primary='Tema' /> */}
+                                    </ListItemButton>
+                                )}
+                                
+                                {themeName === 'light' && (
+                                    <ListItemButton onClick={toggleTheme}>
+                                        <ListItemIcon>
+                                            <Icon>dark_mode</Icon>
+                                        </ListItemIcon>
+                                        {/* <ListItemText primary='Tema' /> */}
+                                    </ListItemButton>
+                                )
+                                
+                                }
+                            </List>
+                        </Box>
+
+                        <Box marginTop={3}>
+                            <Avatar alt='john Doo' src='/JohnDoo.jpg' sx={{ width: theme.spacing(15), height: theme.spacing(15)}} />
+                        </Box>
+
                     </Box>
 
                     <Divider />
                     
                     {/* menu */}
                     <Box flex={1}>
+
                         <List component='nav'>
                             {drawerOptions.map( drawerOption => (
                                 <ListItemLink
