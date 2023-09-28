@@ -16,7 +16,12 @@ export const LightTheme = createTheme({
         },
         background: {
             default: '#ffffff',
-            paper: '#B0C4DE',
+            paper: '#5f5f5f',
+        },
+        text: {
+            primary: '#ffffff',
+            secondary: '#000000',
+            disabled: '#ffffff',
         },
     },
 
