@@ -4,10 +4,10 @@ export const DarkTheme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: '#383838',
-            dark: '#1b1b1b',
-            light: '#484848',
-            contrastText: '#f0f2f2',       
+            main: '#f0f2f2',
+            dark: '#a8a9a9',
+            light: '#f3f4f4',
+            contrastText: '#000000',       
         },
         secondary: {
             main: '#f44336',
@@ -23,6 +23,7 @@ export const DarkTheme = createTheme({
     typography: {
         allVariants: {
             color: '#f0f2f2',
+            fontWeight: 'bold',
         },
     },
     

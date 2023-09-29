@@ -1,4 +1,4 @@
-import { Box, Button, Icon, TextField, useTheme, Paper } from '@mui/material';
+import { Box, Button, Icon, TextField, useTheme } from '@mui/material';
 
 
 interface IFerramentasDaListagemProps {
@@ -24,9 +24,6 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
     return (
 
         <Box 
-        // mudar a cor do fundo
-        
-            component={Paper}
             marginX={1}
             paddingX={2}
             padding={1}

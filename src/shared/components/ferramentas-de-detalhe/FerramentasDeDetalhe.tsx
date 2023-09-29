@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Icon, Paper, Skeleton, useTheme,  } from '@mui/material';
+import { Box, Button, Icon, Paper, Skeleton,  Theme,  useMediaQuery,  useTheme } from '@mui/material';
 
 
 interface IFerramentasDeDetalheProps {
@@ -8,13 +8,13 @@ interface IFerramentasDeDetalheProps {
     mostarBotaoVoltar?: boolean;
     mostarBotaoSalvar?: boolean;
     mostarBotaoApagar?: boolean;
-    mostarBotaoSalvarVoltar?: boolean;
+    // mostarBotaoSalvarVoltar?: boolean;
 
     mostrarBotaoNovoCarregando?: boolean;
     mostrarBotaoVoltarCarregando?: boolean;
     mostrarBotaoSalvarCarregando?: boolean;
     mostrarBotaoApagarCarregando?: boolean;
-    mostrarBotaoSalvarVoltarCarregando?: boolean;
+    // mostrarBotaoSalvarVoltarCarregando?: boolean;
     
     aoClicarEmNovo?: () => void;
     aoClicarEmVoltar?: () => void;
@@ -30,41 +30,56 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
     mostarBotaoVoltar = true,
     mostarBotaoSalvar = true,
     mostarBotaoApagar = true,
-    mostarBotaoSalvarVoltar = false,
+    // mostarBotaoSalvarVoltar = true,
 
     mostrarBotaoNovoCarregando = false,
     mostrarBotaoVoltarCarregando = false,
     mostrarBotaoSalvarCarregando = false,
     mostrarBotaoApagarCarregando = false,
-    mostrarBotaoSalvarVoltarCarregando = false,
+    // mostrarBotaoSalvarVoltarCarregando = false,
 
 
     aoClicarEmNovo,
     aoClicarEmVoltar,
     aoClicarEmSalvar,
     aoClicarEmApagar,
-    aoClicarEmSalvarVoltar,
+    // aoClicarEmSalvarVoltar,
 
 }) => {
+    // configura o breakpoint para o tamanho do dispositivo
+    const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+    // const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
+    // configura o tema
     const theme = useTheme();
+
 
     return (
         
         
         <Box 
-        // mudar a cor do fundo
-        
-            component={Paper}
+            // condicionar caso tema seja claro usar component Paper ou caso seja escuro usar default
+            component={ Paper }
             marginX={1}
             paddingX={2}
             padding={1}
             display='flex'
             gap={1}
             alignItems="center"
-            height={theme.spacing(5)}  
+            justifyContent="space-between"
+            height={theme.spacing(5)} 
+            
         >
 
-            {(mostarBotaoSalvar && !mostrarBotaoSalvarCarregando) && (
+            {smDown && (
+                <Button
+                    color="primary"
+                    disableElevation
+                    variant="contained"
+                    onClick={aoClicarEmSalvar}
+                ><Icon>save</Icon></Button>
+            )}
+
+            {(mostarBotaoSalvar && !mostrarBotaoSalvarCarregando && !smDown) && (
                 <Button
                     color="primary"
                     disableElevation
@@ -72,13 +87,14 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
                     onClick={aoClicarEmSalvar}
                     startIcon={<Icon>save</Icon>}
                 >
-               Salvar
+                    Salvar
                 </Button>
             )}
 
+            
             {mostrarBotaoSalvarCarregando && (<Skeleton width={115} height={65}/>)}
 
-            {(mostarBotaoSalvarVoltar && !mostrarBotaoSalvarVoltarCarregando) && (
+            {/* {mostarBotaoSalvarVoltar && !mostrarBotaoSalvarVoltarCarregando && (
                 <Button
                     color="primary"
                     disableElevation
@@ -86,13 +102,27 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
                     onClick={aoClicarEmSalvarVoltar}
                     startIcon={<Icon>save</Icon>}
                 >
-                  Salvar e Voltar
+                    <Typography variant="button" whiteSpace={'nowrap'}>
+                        Salvar e Voltar
+                    </Typography>
                 </Button>
             )}
 
-            {mostrarBotaoSalvarVoltarCarregando && (<Skeleton width={180} height={65}/>)}
+            {(mostrarBotaoSalvarVoltarCarregando && !smDown && !mdDown) && (<Skeleton width={180} height={65}/>)} */}
 
-            {(mostarBotaoApagar && !mostrarBotaoApagarCarregando) && (
+
+            {smDown && (
+                <Button
+                    color="primary"
+                    disableElevation
+                    variant="contained"
+                    onClick={aoClicarEmSalvar}
+                >
+                    <Icon>delete</Icon>
+                </Button>
+            )}
+
+            {(mostarBotaoApagar && !mostrarBotaoApagarCarregando && !smDown) && (
                 <Button
                     color="primary"
                     disableElevation
@@ -106,7 +136,18 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
 
             {mostrarBotaoApagarCarregando && (<Skeleton width={115} height={65}/>)}
 
-            {(mostarBotaoNovo && !mostrarBotaoNovoCarregando) &&  (
+            {smDown && (
+                <Button
+                    color="primary"
+                    disableElevation
+                    variant="contained"
+                    onClick={aoClicarEmSalvar}
+                >
+                    <Icon>add</Icon>
+                </Button>
+            )}
+
+            {(mostarBotaoNovo && !mostrarBotaoNovoCarregando && !smDown) && (
                 <Button
                     color="primary"
                     disableElevation
@@ -121,9 +162,9 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
             {mostrarBotaoNovoCarregando && (<Skeleton width={115} height={65}/>)}
 
 
-            <Divider  variant='middle' orientation='vertical'/>
+            {/* <Divider  variant='middle' orientation='vertical'/> */}
 
-            {(mostarBotaoVoltar && !mostrarBotaoVoltarCarregando) && (
+            {mostarBotaoVoltar && !mostrarBotaoVoltarCarregando && (
                 <Button
                     color="primary"
                     disableElevation

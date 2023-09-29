@@ -1,4 +1,4 @@
-import { Avatar, Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme, Box } from '@mui/material';
+import { Avatar, Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme, Box} from '@mui/material';
 import React from 'react';
 import { useAppThemeContext, useDrawerContext } from '../../contexts';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
@@ -61,7 +61,7 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
     const { themeName } = useAppThemeContext();
   
     return (
-        <>
+        <Box margin={0} padding={0} boxSizing={'border-box'}>
             {/* // sidebar */}
             <Drawer open={ isDrawerOpen } variant={smDown ? 'temporary' : 'permanent'} onClose={toggleDrawerOpen}>
 
@@ -127,7 +127,7 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
             <Box height="100vh" marginLeft={smDown ? 0 : theme.spacing(29)}>
                 {children}
             </Box>
-        </>
+        </Box>
         
     );
 };

@@ -20,7 +20,7 @@ export  const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({childre
 
 
     return (
-        <Box height="100%" display="flex" flexDirection="column" gap={1}>
+        <Box height="100%" display="flex" flexDirection="column" margin={0} padding={0} boxSizing={'border-box'}>
 
             <Box display="flex" alignItems="center" padding={1} gap={5} height={theme.spacing(smDown ? 6 : mdDown ?  8 : 12)}  >
 
