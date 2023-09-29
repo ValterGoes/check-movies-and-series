@@ -64,18 +64,21 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
             padding={1}
             display='flex'
             gap={1}
-            alignItems="center"
-            justifyContent="space-between"
+            alignItems="revert"
+            justifyContent="flex-end"
             height={theme.spacing(5)} 
             
         >
 
+            
+            {/* // botão salvar */}
             {smDown && (
                 <Button
                     color="primary"
                     disableElevation
                     variant="contained"
                     onClick={aoClicarEmSalvar}
+                    fullWidth
                 ><Icon>save</Icon></Button>
             )}
 
@@ -90,7 +93,6 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
                     Salvar
                 </Button>
             )}
-
             
             {mostrarBotaoSalvarCarregando && (<Skeleton width={115} height={65}/>)}
 
@@ -111,12 +113,14 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
             {(mostrarBotaoSalvarVoltarCarregando && !smDown && !mdDown) && (<Skeleton width={180} height={65}/>)} */}
 
 
+            {/* // botão apagar */}
             {smDown && (
                 <Button
                     color="primary"
                     disableElevation
                     variant="contained"
-                    onClick={aoClicarEmSalvar}
+                    onClick={aoClicarEmApagar}
+                    fullWidth
                 >
                     <Icon>delete</Icon>
                 </Button>
@@ -136,12 +140,15 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
 
             {mostrarBotaoApagarCarregando && (<Skeleton width={115} height={65}/>)}
 
+
+            {/* // botão novo */}
             {smDown && (
                 <Button
                     color="primary"
                     disableElevation
                     variant="contained"
-                    onClick={aoClicarEmSalvar}
+                    onClick={aoClicarEmNovo}
+                    fullWidth
                 >
                     <Icon>add</Icon>
                 </Button>
@@ -162,9 +169,20 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
             {mostrarBotaoNovoCarregando && (<Skeleton width={115} height={65}/>)}
 
 
-            {/* <Divider  variant='middle' orientation='vertical'/> */}
+            {/* // botão voltar */}
+            {smDown && (
+                <Button
+                    color="primary"
+                    disableElevation
+                    variant="contained"
+                    onClick={aoClicarEmVoltar}
+                    fullWidth
+                >
+                    <Icon>arrow_back</Icon>
+                </Button>
+            )}
 
-            {mostarBotaoVoltar && !mostrarBotaoVoltarCarregando && (
+            {(mostarBotaoVoltar && !mostrarBotaoVoltarCarregando && !smDown) && (
                 <Button
                     color="primary"
                     disableElevation
