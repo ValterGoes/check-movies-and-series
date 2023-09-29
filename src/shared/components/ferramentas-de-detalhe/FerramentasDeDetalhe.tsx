@@ -1,8 +1,38 @@
 import { Box, Button, Divider, Icon, Paper, useTheme,  } from '@mui/material';
 
 
+interface IFerramentasDeDetalheProps {
+    textoBotaoNovo?: string;
 
-export const FerramentasDeDetalhe: React.FC = () => {
+    mostarBotaoNovo?: boolean;
+    mostarBotaoVoltar?: boolean;
+    mostarBotaoSalvar?: boolean;
+    mostarBotaoApagar?: boolean;
+    mostarBotaoSalvarVoltar?: boolean;
+
+    aoClicarEmNovo?: () => void;
+    aoClicarEmVoltar?: () => void;
+    aoClicarEmSalvar?: () => void;
+    aoClicarEmApagar?: () => void;
+    aoClicarEmSalvarVoltar?: () => void;
+}
+
+export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
+    textoBotaoNovo = 'Novo',
+
+    mostarBotaoNovo = true,
+    mostarBotaoVoltar = true,
+    mostarBotaoSalvar = true,
+    mostarBotaoApagar = true,
+    mostarBotaoSalvarVoltar = false,
+
+    aoClicarEmNovo,
+    aoClicarEmVoltar,
+    aoClicarEmSalvar,
+    aoClicarEmApagar,
+    aoClicarEmSalvarVoltar,
+
+}) => {
     const theme = useTheme();
 
     return (
@@ -21,52 +51,68 @@ export const FerramentasDeDetalhe: React.FC = () => {
             height={theme.spacing(5)}  
         >
 
-            <Button
-                color="primary"
-                disableElevation
-                variant="contained"
-                startIcon={<Icon>save</Icon>}
-            >
+            {mostarBotaoSalvar && (
+                <Button
+                    color="primary"
+                    disableElevation
+                    variant="contained"
+                    onClick={aoClicarEmSalvar}
+                    startIcon={<Icon>save</Icon>}
+                >
                Salvar
-            </Button>
+                </Button>
+            )}
 
-            <Button
-                color="primary"
-                disableElevation
-                variant="outlined"
-                startIcon={<Icon>save</Icon>}
-            >
-               Salvar e Voltar
-            </Button>
+            {mostarBotaoSalvarVoltar && (
+                <Button
+                    color="primary"
+                    disableElevation
+                    variant="outlined"
+                    onClick={aoClicarEmSalvarVoltar}
+                    startIcon={<Icon>save</Icon>}
+                >
+                  Salvar e Voltar
+                </Button>
+            )}
 
-            <Button
-                color="primary"
-                disableElevation
-                variant="outlined"
-                startIcon={<Icon>delete</Icon>}
-            >
-               Apagar
-            </Button>
+            {mostarBotaoApagar && (
+                <Button
+                    color="primary"
+                    disableElevation
+                    variant="outlined"
+                    onClick={aoClicarEmApagar}
+                    startIcon={<Icon>delete</Icon>}
+                >
+                    Apagar
+                </Button>
+            )}
 
-            <Button
-                color="primary"
-                disableElevation
-                variant="outlined"
-                startIcon={<Icon>add</Icon>}
-            >
-               Novo
-            </Button>
+            {mostarBotaoNovo && (
+                <Button
+                    color="primary"
+                    disableElevation
+                    variant="outlined"
+                    onClick={aoClicarEmNovo}
+                    startIcon={<Icon>add</Icon>}
+                >
+                    {textoBotaoNovo}
+                </Button>
+            )}
+
 
             <Divider  variant='middle' orientation='vertical'/>
 
-            <Button
-                color="primary"
-                disableElevation
-                variant="outlined"
-                startIcon={<Icon>arrow_back</Icon>}
-            >
-               Voltar
-            </Button>
+            {mostarBotaoVoltar && (
+                <Button
+                    color="primary"
+                    disableElevation
+                    variant="outlined"
+                    onClick={aoClicarEmVoltar}
+                    startIcon={<Icon>arrow_back</Icon>}
+                >
+                    Voltar
+                </Button>
+            )}
 
         </Box>
     );

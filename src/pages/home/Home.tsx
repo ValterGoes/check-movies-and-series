@@ -10,7 +10,7 @@ export const Home = () => {
         <LayoutBaseDePagina 
             titulo='Home' 
             barraDeFerramentas={(
-                <FerramentasDeDetalhe />
+                <FerramentasDeDetalhe  mostarBotaoSalvarVoltar />
             )}
         >
             <h1>CheckList de filmes</h1>
