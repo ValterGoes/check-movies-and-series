@@ -1,6 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useState} from 'react';
-import { ThemeProvider } from '@mui/material';
-import { Box } from '@mui/system';
+import { ThemeProvider, Box } from '@mui/material';
 import { LightTheme, DarkTheme } from '../themes';
 
 // faz a tipagem do contexto
