@@ -1,4 +1,4 @@
-import { FerramentasDaListagem } from '../../shared/components';
+import { FerramentasDeDetalhe } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 
 
@@ -10,9 +10,7 @@ export const Home = () => {
         <LayoutBaseDePagina 
             titulo='Home' 
             barraDeFerramentas={(
-                <FerramentasDaListagem  
-                    mostrarInputBusca
-                />
+                <FerramentasDeDetalhe />
             )}
         >
             <h1>CheckList de filmes</h1>
