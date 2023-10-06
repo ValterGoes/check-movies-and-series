@@ -1,0 +1,24 @@
+{
+    "filmes": [
+        {
+            "id": 1,
+            "imagem": "",
+            "titulo": "O Poderoso Chefão",	
+            "ano": 1972,
+            "genero": "Drama",
+            "diretor": "Francis Ford Coppola",
+            "atores": "Marlon Brando, Al Pacino, James Caan",
+            "sinopse": "A saga de uma família mafiosa italiana que luta para estabelecer sua supremacia nos Estados Unidos no após-guerra. Uma tentativa de assassinato deixa Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios. Sonny não tem a menor condição de manter a posição de seu pai e, por conta disso, uma guerra com as outras famílias da máfia se inicia. Enquanto isso, Michael cuida para que a família não entre em uma guerra de gangues."
+        },
+        {
+            "id": 2,
+            "imagem": "",
+            "titulo": "O Poderoso Chefão 2",
+            "ano": 1972,
+            "genero": "Drama",
+            "diretor": "Francis Ford Coppola",
+            "atores": "Marlon Brando, Al Pacino, James Caan",
+            "sinopse": "A saga de uma família mafiosa italiana que luta para estabelecer sua supremacia nos Estados Unidos no após-guerra. Uma tentativa de assassinato deixa Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios. Sonny não tem a menor condição de manter a posição de seu pai e, por conta disso, uma guerra com as outras famílias da máfia se inicia. Enquanto isso, Michael cuida para que a família não entre em uma guerra de gangues."
+        }
+    ]
+}

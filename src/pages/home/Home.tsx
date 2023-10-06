@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import { FerramentasDeDetalhe } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 
@@ -13,7 +14,9 @@ export const Home = () => {
                 <FerramentasDeDetalhe />
             )}
         >
-            <h1>CheckList de filmes</h1>
+            <Typography>
+                <h1>CheckList de filmes</h1>
+            </Typography>
         </LayoutBaseDePagina>
 
     );
