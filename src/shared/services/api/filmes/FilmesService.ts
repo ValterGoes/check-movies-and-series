@@ -32,7 +32,7 @@ const getAll = async (page = 1, filter = ''): Promise<TFilmesComTotalCount | Err
             return {
                 data,
                 totalCount: Number(headers['x-total-count'] || Environment.LIMITE_DE_FILMES_POR_PAGINA),
-            }
+            };
         }
 
         return new Error('Erro ao listar os Filmes!');
@@ -40,18 +40,74 @@ const getAll = async (page = 1, filter = ''): Promise<TFilmesComTotalCount | Err
     } catch (error) {
 
         console.log(error);
-        
+
         return new Error((error as {message: string}).message || 'Erro ao listar os Filmes!');        
     }
 };
 
-const getById = async (): Promise<any> => {};
+const getById = async (id: number ): Promise<IDetalheFilme | Error> => {
+    try {
 
-const create = async (): Promise<any> => {};
+        const { data } = await Api.get(`/filmes/${id}`);
 
-const updateById = async (): Promise<any> => {};
+        if (data) {
+            return data;
+        }
 
-const deleteById = async (): Promise<any> => {};
+        return new Error('Erro ao consultar o Filme!');
+
+    } catch (error) {
+
+        console.log(error);
+
+        return new Error((error as { message: string }).message || 'Erro ao consultar o Filme!');
+    }
+};
+
+const create = async ( dados: Omit<IDetalheFilme, 'id'>): Promise< number | Error> => {
+    try {
+
+        const { data } = await Api.post<IDetalheFilme>('/filmes', dados);
+
+        if (data) {
+            return data.id;
+        }
+
+        return new Error('Erro ao adicionar/criar o Filme!');
+
+    } catch (error) {
+
+        console.log(error);
+
+        return new Error((error as { message: string }).message || 'Erro ao adicionar/criar o Filme!');
+    }
+};
+
+const updateById = async (id: number, dados: IDetalheFilme): Promise<void | Error> => {
+    try {
+
+        await Api.put(`/filmes/${id}`, dados); 
+
+    } catch (error) {
+
+        console.log(error);
+
+        return new Error((error as { message: string }).message || 'Erro ao atualizar o Filme!');
+    }
+};
+
+const deleteById = async (id: number): Promise<void | Error> => {
+    try {
+
+        await Api.delete(`/filmes/${id}`);
+
+    } catch (error) {
+
+        console.log(error);
+
+        return new Error((error as { message: string }).message || 'Erro ao apagar o Filme!');
+    }
+};
 
 
 export const FilmesService = {
