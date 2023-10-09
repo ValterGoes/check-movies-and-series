@@ -1,24 +1,46 @@
 {
-    "filmes": [
-        {
-            "id": 1,
-            "imagem": "",
-            "titulo": "O Poderoso Chefão",	
-            "ano": 1972,
-            "genero": "Drama",
-            "diretor": "Francis Ford Coppola",
-            "atores": "Marlon Brando, Al Pacino, James Caan",
-            "sinopse": "A saga de uma família mafiosa italiana que luta para estabelecer sua supremacia nos Estados Unidos no após-guerra. Uma tentativa de assassinato deixa Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios. Sonny não tem a menor condição de manter a posição de seu pai e, por conta disso, uma guerra com as outras famílias da máfia se inicia. Enquanto isso, Michael cuida para que a família não entre em uma guerra de gangues."
-        },
-        {
-            "id": 2,
-            "imagem": "",
-            "titulo": "O Poderoso Chefão 2",
-            "ano": 1972,
-            "genero": "Drama",
-            "diretor": "Francis Ford Coppola",
-            "atores": "Marlon Brando, Al Pacino, James Caan",
-            "sinopse": "A saga de uma família mafiosa italiana que luta para estabelecer sua supremacia nos Estados Unidos no após-guerra. Uma tentativa de assassinato deixa Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios. Sonny não tem a menor condição de manter a posição de seu pai e, por conta disso, uma guerra com as outras famílias da máfia se inicia. Enquanto isso, Michael cuida para que a família não entre em uma guerra de gangues."
-        }
-    ]
+  "filmes": [
+    {
+      "id": 1,
+      "imagem": "",
+      "titulo": "O Poderoso Chefão",
+      "ano": 1972,
+      "genero": "Drama",
+      "diretor": "Francis Ford Coppola",
+      "atores": "Marlon Brando, Al Pacino, James Caan",
+      "sinopse": "A saga de uma família mafiosa italiana que luta para estabelecer sua supremacia nos Estados Unidos no após-guerra. Uma tentativa de assassinato deixa Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios. Sonny não tem a menor condição de manter a posição de seu pai e, por conta disso, uma guerra com as outras famílias da máfia se inicia. Enquanto isso, Michael cuida para que a família não entre em uma guerra de gangues."
+    },
+    {
+      "id": 2,
+      "imagem": "",
+      "titulo": "O Poderoso Chefão 2",
+      "ano": 1972,
+      "genero": "Drama",
+      "diretor": "Francis Ford Coppola",
+      "atores": "Marlon Brando, Al Pacino, James Caan",
+      "sinopse": "A saga de uma família mafiosa italiana que luta para estabelecer sua supremacia nos Estados Unidos no após-guerra. Uma tentativa de assassinato deixa Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios. Sonny não tem a menor condição de manter a posição de seu pai e, por conta disso, uma guerra com as outras famílias da máfia se inicia. Enquanto isso, Michael cuida para que a família não entre em uma guerra de gangues."
+    }
+  ],
+  "series": [
+    {
+        "id":1,
+        "imagem":"",
+        "titulo":"Braking Bad",
+        "ano":2008,
+        "genero":"Drama",
+        "diretor":"Vince Gilligan",
+        "atores":"Bryan Cranston, Aaron Paul, Anna Gunn",
+        "sinopse":"Walter White é um professor de química na casa dos 50 anos que trabalha em uma escola secundária no Novo México. Para atender às necessidades de Skyler, sua esposa grávida, e Walt Junior, seu filho deficiente físico, ele tem que trabalhar duplamente. Sua vida fica ainda mais complicada quando descobre que está sofrendo de um câncer de pulmão incurável. Para aumentar rapidamente a quantidade de dinheiro que deixaria para sua família após sua morte, Walter usa seu conhecimento de química para fazer e vender metanfetamina, uma droga sintética. Ele conta com a ajuda do ex-aluno e pequeno traficante Jesse e enfrenta vários desafios, incluindo o fato de seu concunhado ser um importante nome dentro da Agência Anti-Drogas da região."
+    },
+    {
+        "id":2,
+        "imagem":"",
+        "titulo":"Prison Break",
+        "ano":2005,
+        "genero":"Drama",
+        "diretor":"Paul Scheuring",
+        "atores":"Dominic Purcell, Wentworth Miller, Amaury Nolasco",
+        "sinopse":"Michael Scofield é um homem desesperado numa situação desesperadora. Seu irmão, Lincoln Burrows, está no corredor da morte e será executado em alguns meses, após ser condenado por um assassinato que Michael está convencido que Lincoln não cometeu. Sem outras opções e com o tempo diminuindo, Michael assalta um banco para que ele seja preso e levado para a penitenciária estadual Fox River, o mesmo local onde seu irmão está cumprindo pena. Uma vez lá dentro, Michael um engenheiro civil com as plantas da prisão começa a executar um elaborado plano para libertar Lincoln e provar a inocência dele."
+    }
+  ]
 }

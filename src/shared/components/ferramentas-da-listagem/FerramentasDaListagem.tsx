@@ -1,4 +1,4 @@
-import { Box, Button, Icon, TextField, useTheme } from '@mui/material';
+import { Box, Button, Icon, Paper, TextField, useTheme } from '@mui/material';
 
 import { Environment } from '../../environment';
 
@@ -26,6 +26,7 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
     return (
 
         <Box 
+            component={Paper}
             marginX={1}
             paddingX={2}
             padding={1}

@@ -25,6 +25,5 @@ export const DarkTheme = createTheme({
             color: '#f0f2f2',
             fontWeight: 'bold',
         },
-    },
-    
+    },    
 });

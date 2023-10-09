@@ -2,36 +2,36 @@ import { Environment } from '../../../environment';
 import { Api } from '../axios-config';
 
 
-interface IListagemFIlme {
+interface IListagemSeries {
     id: number;
     titulo: string;
     diretor: string;
     ano: number;
 }
 
-interface IDetalheFilme {
+interface IDetalheSeries {
     id: number;
     titulo: string;
     diretor: string;
     ano: number;
 }
 
-type TFilmesComTotalCount = {
-    data: IListagemFIlme[];
+type TSeriesComTotalCount = {
+    data: IListagemSeries[];
     totalCount: number;
 }
 
-const getAll = async (page = 1, filter = ''): Promise<TFilmesComTotalCount | Error> => {
+const getAll = async (page = 1, filter = ''): Promise<TSeriesComTotalCount | Error> => {
     try {
 
-        const urlRelativa = `/filmes?_page=${page}&_limit=${Environment.LIMITE_DE_FILMES_POR_PAGINA}&titulo_like=${filter}`;
+        const urlRelativa = `/series?_page=${page}&_limit=${Environment.LIMITE_DE_SERIES_POR_PAGINA}&titulo_like=${filter}`;
        
         const { data, headers } = await Api.get(urlRelativa);
 
         if (data) {
             return {
                 data,
-                totalCount: Number(headers['x-total-count'] || Environment.LIMITE_DE_FILMES_POR_PAGINA),
+                totalCount: Number(headers['x-total-count'] || Environment.LIMITE_DE_SERIES_POR_PAGINA),
             };
         }
 
@@ -45,10 +45,10 @@ const getAll = async (page = 1, filter = ''): Promise<TFilmesComTotalCount | Err
     }
 };
 
-const getById = async (id: number ): Promise<IDetalheFilme | Error> => {
+const getById = async (id: number ): Promise<IDetalheSeries | Error> => {
     try {
 
-        const { data } = await Api.get(`/filmes/${id}`);
+        const { data } = await Api.get(`/series/${id}`);
 
         if (data) {
             return data;
@@ -64,10 +64,10 @@ const getById = async (id: number ): Promise<IDetalheFilme | Error> => {
     }
 };
 
-const create = async ( dados: Omit<IDetalheFilme, 'id'>): Promise< number | Error> => {
+const create = async ( dados: Omit<IDetalheSeries, 'id'>): Promise< number | Error> => {
     try {
 
-        const { data } = await Api.post<IDetalheFilme>('/filmes', dados);
+        const { data } = await Api.post<IDetalheSeries>('/series', dados);
 
         if (data) {
             return data.id;
@@ -83,10 +83,10 @@ const create = async ( dados: Omit<IDetalheFilme, 'id'>): Promise< number | Erro
     }
 };
 
-const updateById = async (id: number, dados: IDetalheFilme): Promise<void | Error> => {
+const updateById = async (id: number, dados: IDetalheSeries): Promise<void | Error> => {
     try {
 
-        await Api.put(`/filmes/${id}`, dados); 
+        await Api.put(`/series/${id}`, dados); 
 
     } catch (error) {
 
@@ -99,7 +99,7 @@ const updateById = async (id: number, dados: IDetalheFilme): Promise<void | Erro
 const deleteById = async (id: number): Promise<void | Error> => {
     try {
 
-        await Api.delete(`/filmes/${id}`);
+        await Api.delete(`/series/${id}`);
 
     } catch (error) {
 
@@ -110,7 +110,7 @@ const deleteById = async (id: number): Promise<void | Error> => {
 };
 
 
-export const FilmesService = {
+export const SeriesService = {
 
     getAll,
     getById,

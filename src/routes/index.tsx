@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate} from 'react-router-dom';
 import { useDrawerContext } from '../shared/contexts';
 import { useEffect } from 'react';
-import { Movies } from '../pages/movie/Movies';
 import { Home } from '../pages/home/Home';
-import { Series } from '../pages';
+import { ListagemDeSeries} from '../pages/serie/ListagemDeSeries';
+import { ListagemDeFilmes } from '../pages/filme/ListagemDeFilmes';
 
 
 
@@ -24,8 +24,8 @@ export const AppRoutes = () => {
         <Routes>
             {/* rota home */}
             <Route path="/" element={<Home />} />
-            <Route path="/filmes" element={<Movies />} />
-            <Route path="/series" element={<Series />} />
+            <Route path="/filmes" element={<ListagemDeFilmes />} />
+            <Route path="/series" element={<ListagemDeSeries />} />
 
             {/* redireciona para a rota /Home caso o usuário digite uma rota inválida */}
             <Route path="*" element={<Navigate to="/"/>} />
