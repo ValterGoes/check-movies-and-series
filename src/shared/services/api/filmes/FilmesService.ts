@@ -2,14 +2,14 @@ import { Environment } from '../../../environment';
 import { Api } from '../axios-config';
 
 
-interface IListagemFIlme {
+export interface IListagemFIlme {
     id: number;
     titulo: string;
     diretor: string;
     ano: number;
 }
 
-interface IDetalheFilme {
+export interface IDetalheFilme {
     id: number;
     titulo: string;
     diretor: string;

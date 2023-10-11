@@ -52,7 +52,7 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
     // configura o tema
     const theme = useTheme();
     //verifica se a largura da tela é menor que 600px
-    const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+    const smDown = useMediaQuery(theme.breakpoints.down(648));
     // controla o estado do menu lateral
     const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
     // controla o estado do tema

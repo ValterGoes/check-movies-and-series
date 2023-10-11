@@ -2,18 +2,22 @@ import { Environment } from '../../../environment';
 import { Api } from '../axios-config';
 
 
-interface IListagemSeries {
+export interface IListagemSeries {
     id: number;
+    imagem: string;
     titulo: string;
     diretor: string;
     ano: number;
+    sinopse: string;
 }
 
-interface IDetalheSeries {
+export interface IDetalheSeries {
     id: number;
+    imagem: string;
     titulo: string;
     diretor: string;
     ano: number;
+    sinopse: string;
 }
 
 type TSeriesComTotalCount = {
