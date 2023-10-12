@@ -1,11 +1,12 @@
 import { useSearchParams } from 'react-router-dom';
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
 
 import { FilmesService, IListagemFIlme } from '../../shared/services/api/filmes/FilmesService';
 import { FerramentasDaListagem } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 import { useDebounce } from '../../shared/hooks';
+import { Environment } from '../../shared/environment';
 
 
 export const ListagemDeFilmes: React.FC = () => {
@@ -75,11 +76,31 @@ export const ListagemDeFilmes: React.FC = () => {
                                 <TableCell>{row.ano}</TableCell>
                                 <TableCell>{row.diretor}</TableCell>
                             </TableRow>
+                            // <TableRow >
+                            //     <TableCell>{row.imagem}</TableCell>
+                            //     <TableCell sx={{textAlign: 'justify', width: '40rem'}}>{row.sinopse}</TableCell>
+                            // </TableRow>
+                            
                         ))}
-                    </TableBody>                   
+                    </TableBody> 
+
+                    {totalCount === 0 && !isLoading &&( 
+                        <caption>{Environment.LISTAGEM_VAZIA}</caption>
+                    )}
+
+                    <TableFooter>
+                        {isLoading && (
+                            <TableRow>
+                                <TableCell colSpan={3}>
+                                    <LinearProgress variant='indeterminate' />
+                                </TableCell>
+                            </TableRow>
+                        )}
+                        
+                    </TableFooter>
+                                      
                 </Table>
             </TableContainer>
-
         </LayoutBaseDePagina>
     );
 };
