@@ -39,7 +39,7 @@ const getAll = async (page = 1, filter = ''): Promise<TSeriesComTotalCount | Err
             };
         }
 
-        return new Error('Erro ao listar os Filmes!');
+        return new Error('Erro ao listar as Séries!');
 
     } catch (error) {
 
@@ -58,7 +58,7 @@ const getById = async (id: number ): Promise<IDetalheSeries | Error> => {
             return data;
         }
 
-        return new Error('Erro ao consultar o Filme!');
+        return new Error('Erro ao consultar a Série!');
 
     } catch (error) {
 
@@ -77,13 +77,13 @@ const create = async ( dados: Omit<IDetalheSeries, 'id'>): Promise< number | Err
             return data.id;
         }
 
-        return new Error('Erro ao adicionar/criar o Filme!');
+        return new Error('Erro ao adicionar nova Série!');
 
     } catch (error) {
 
         console.log(error);
 
-        return new Error((error as { message: string }).message || 'Erro ao adicionar/criar o Filme!');
+        return new Error((error as { message: string }).message || 'Erro ao adicionar nova Série!');
     }
 };
 
@@ -96,7 +96,7 @@ const updateById = async (id: number, dados: IDetalheSeries): Promise<void | Err
 
         console.log(error);
 
-        return new Error((error as { message: string }).message || 'Erro ao atualizar o Filme!');
+        return new Error((error as { message: string }).message || 'Erro ao atualizar a Série!');
     }
 };
 
@@ -109,7 +109,7 @@ const deleteById = async (id: number): Promise<void | Error> => {
 
         console.log(error);
 
-        return new Error((error as { message: string }).message || 'Erro ao apagar o Filme!');
+        return new Error((error as { message: string }).message || 'Erro ao apagar a Série!');
     }
 };
 

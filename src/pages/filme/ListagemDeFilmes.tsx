@@ -82,8 +82,9 @@ export const ListagemDeFilmes: React.FC = () => {
             barraDeFerramentas= {
                 <FerramentasDaListagem
                     mostrarInputBusca
-                    textoBotaoNovo='Novo Filme'
                     textoDaBusca={busca}
+                    textoBotaoNovo='Novo Filme'
+                    aoClicarEmNovo={() => navigate('/filmes/detalhe/novo')}
                     aoMudarTextoDaBusca={texto => setSearchParams({ busca: texto, pagina: '1' }, { replace: true })}
                 />
             }

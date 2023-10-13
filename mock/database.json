@@ -1,6 +1,16 @@
 {
   "filmes": [
     {
+      "id": 1,
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/1/1c/The_Godfather_Coppola_Restoration.jpg",
+      "titulo": "O Poderoso Chefão",
+      "ano": 1972,
+      "genero": "Drama",
+      "diretor": "Francis Ford Coppola",
+      "atores": "Marlon Brando, Al Pacino, James Caan",
+      "sinopse": "A saga de uma família mafiosa italiana que luta para estabelecer sua supremacia nos Estados Unidos no após-guerra. Uma tentativa de assassinato deixa Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios. Sonny não tem a menor condição de manter a posição de seu pai e, por conta disso, uma guerra com as outras famílias da máfia se inicia. Enquanto isso, Michael cuida para que a família não entre em uma guerra de gangues."
+    },
+    {
       "id": 2,
       "imagem": "https://cinema10.com.br/upload/filmes/filmes_1021_O%20Poderoso%20Chefao%202%20Poster.jpg?default=poster",
       "titulo": "O Poderoso Chefão 2",
@@ -22,23 +32,23 @@
     },
     {
       "id": 4,
-      "imagem": "https://m.media-amazon.com/images/M/MV5BNWI1NjkxM2MtOTU4My00YzQ5LTliNGMtNmFlM2U5NWM3MDY1XkEyXkFqcGdeQXVyNTUyMzE4Mzg@._V1_FMjpg_UX1000_.jpg",
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/7/7b/Transformers_Poster.jpg",
       "titulo": "Transformers",
       "ano": 2007,
       "genero": "Ação",
       "diretor": "Michael Bay",
       "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
-      "sinopse": "Adolescente do ensino médio Sam Witwicky compra seu primeiro carro, que é na verdade o Autobot Bumblebee. Bumblebee defende Sam e sua namorada Mikaela Banes de Decepticon Barricade, antes de apresentar a ambos para os outros Autobots. Eles recebem a tarefa de salvar o Allspark de Megatron."
+      "sinopse": "Dois clãs de robôs alienígenas robôs alienígenas transformam-se em veículos e outros dispositivos mecânicos e travam uma batalha, cujo o objetivo é a posse do \"Allspark\", um cubo de Cybertron que possibilita a quem o possui a conquista total do universo."
     },
     {
       "id": 5,
-      "imagem": "https://media.fstatic.com/QC8n_fBtm1uhm2jcSR-kWUIyROI=/322x478/smart/filters:format(webp)/media/movies/covers/2010/10/3ae1805667cee19fc5c5cd998f2b0323.jpg",
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/6/66/Transformers_Revenge_of_the_Fallen_poster.jpg",
       "titulo": "Transformers: A Vingança dos Derrotados",
       "ano": 2009,
       "genero": "Ação",
       "diretor": "Michael Bay",
       "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
-      "sinopse": "Sam Witwicky deixa os Autobots por uma vida normal. Mas quando sua mente é cheia de símbolos criptográficos, o governo dos EUA pede a ajuda dos Autobots. Sam então se junta aos Autobots e ajuda a derrotar os Decepticons, que pretendem usar o conhecimento de Sam para assumir o poder."
+      "sinopse": "Sam Witwicky deixa os Autobots para trás para começar uma nova vida na faculdade. Mas quando seu cérebro é preenchido com símbolos misteriosos, o Decepticons ressuscitam e Sam é arrastado de volta à guerra dos Transformers."
     },
     {
       "id": 6,
@@ -59,6 +69,36 @@
       "diretor": "Michael Bay",
       "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
       "sinopse": "Cade Yeager, um inventor, descobre um Transformer enterrado. Ele recebe a atenção tanto dos Autobots quanto dos Decepticons enquanto tenta permanecer fora do alcance deles."
+    },
+    {
+      "id": 8,
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/9/9b/Transformers_The_Last_Knight.jpg",
+      "titulo": "Transformers: O Último Cavaleiro",
+      "ano": 2017,
+      "genero": "Ação",
+      "diretor": "Michael Bay",
+      "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
+      "sinopse": "Optimus Prime encontra seu planeta natal, Cybertron, agora um planeta morto, e descobre que foi responsável por matá-lo. Ele encontra uma maneira de trazer o planeta de volta à vida, mas para isso precisa encontrar um artefato que está na Terra."
+    },
+    {
+      "id": 9,
+      "imagem": "",
+      "titulo": "Velozes e Furiosos",
+      "ano": 2001,
+      "genero": "Ação",
+      "diretor": "Rob Cohen",
+      "atores": "Vin Diesel, Paul Walker, Michelle Rodriguez",
+      "sinopse": "Dominic Toretto é o líder de uma gangue de corridas de ruas em Los Angeles que está sendo investigado pela polícia por roubo de equipamentos eletrônicos. Para investigá-lo é enviado Brian O'Conner, que se infiltra na gangue na intenção de descobrir se Toretto é realmente o autor dos crimes e se há alguém mais por trás deles."
+    },
+    {
+      "id": 10,
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/8/8f/2Fast2Furious.jpg",
+      "titulo": "Velozes e Furiosos 2",
+      "ano": 2003,
+      "genero": "Ação",
+      "diretor": "John Singleton",
+      "atores": "Paul Walker, Tyrese Gibson, Eva Mendes",
+      "sinopse": "Mussun"
     }
   ],
   "series": [
@@ -71,16 +111,6 @@
       "diretor": "Vince Gilligan",
       "atores": "Bryan Cranston, Aaron Paul, Anna Gunn",
       "sinopse": "Walter White é um professor de química na casa dos 50 anos que trabalha em uma escola secundária no Novo México. Para atender às necessidades de Skyler, sua esposa grávida, e Walt Junior, seu filho deficiente físico, ele tem que trabalhar duplamente. Sua vida fica ainda mais complicada quando descobre que está sofrendo de um câncer de pulmão incurável. Para aumentar rapidamente a quantidade de dinheiro que deixaria para sua família após sua morte, Walter usa seu conhecimento de química para fazer e vender metanfetamina, uma droga sintética. Ele conta com a ajuda do ex-aluno e pequeno traficante Jesse e enfrenta vários desafios, incluindo o fato de seu concunhado ser um importante nome dentro da Agência Anti-Drogas da região."
-    },
-    {
-      "id": 2,
-      "imagem": "https://m.media-amazon.com/images/M/MV5BMGJlMGIyYzktZjE4Yy00ZmFkLTgxNWQtMjAxNDNmNmRjNDczXkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_.jpg",
-      "titulo": "Prison Break",
-      "ano": 2005,
-      "genero": "Drama",
-      "diretor": "Paul Scheuring",
-      "atores": "Dominic Purcell, Wentworth Miller, Amaury Nolasco",
-      "sinopse": "Michael Scofield é um homem desesperado numa situação desesperadora. Seu irmão, Lincoln Burrows, está no corredor da morte e será executado em alguns meses, após ser condenado por um assassinato que Michael está convencido que Lincoln não cometeu. Sem outras opções e com o tempo diminuindo, Michael assalta um banco para que ele seja preso e levado para a penitenciária estadual Fox River, o mesmo local onde seu irmão está cumprindo pena. Uma vez lá dentro, Michael um engenheiro civil com as plantas da prisão começa a executar um elaborado plano para libertar Lincoln e provar a inocência dele."
     },
     {
       "id": 3,

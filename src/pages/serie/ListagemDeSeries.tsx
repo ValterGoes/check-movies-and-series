@@ -1,5 +1,5 @@
-import { useSearchParams } from 'react-router-dom';
-import { Accordion, AccordionDetails, AccordionSummary, Grid, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Typography } from '@mui/material';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import { Accordion, AccordionDetails, AccordionSummary, Grid, Icon, IconButton, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Typography } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
 
 import { IListagemSeries, SeriesService } from '../../shared/services/api/series/SeriesService';
@@ -13,6 +13,7 @@ import { ExpandMore } from '@mui/icons-material';
 export const ListagemDeSeries: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const { debounce} = useDebounce();
+    const navigate = useNavigate();
 
     const [rows, setRows] = useState<IListagemSeries[]>([]);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -52,6 +53,22 @@ export const ListagemDeSeries: React.FC = () => {
 
     }, [busca, pagina]);
 
+
+    const handleDelete = (id: number) => {
+        if (confirm('Realmente deseja Apagar?')) {
+            SeriesService.deleteById(id)
+                .then(result => {
+                    if (result instanceof Error) {
+                        alert(result.message || 'Erro ao apagar');
+                    } else {
+                        setRows(rows.filter(row => row.id !== id));
+                        alert('Apagado com sucesso');
+                    }
+                });
+        }
+    };
+
+
     return (
         <LayoutBaseDePagina
             titulo="Séries"
@@ -69,7 +86,8 @@ export const ListagemDeSeries: React.FC = () => {
                 <Table>
                     <TableHead sx={{
                         display: 'flex',
-                    }}>                 
+                    }}> 
+                        <TableCell > </TableCell>                
                         <TableCell >Titulo</TableCell>
                         <TableCell >Ano</TableCell>
                         <TableCell >Diretor</TableCell>
@@ -86,6 +104,14 @@ export const ListagemDeSeries: React.FC = () => {
                                     id="panel1a-header"
                                 >
                                     <Grid container >
+                                        <Grid item xs={12} sm={1}>
+                                            <IconButton size='small' onClick={() => handleDelete(row.id)}> 
+                                                <Icon>delete</Icon> 
+                                            </IconButton>
+                                            <IconButton size='small' onClick={() => navigate(`/series/detalhe/${row.id}`)}> 
+                                                <Icon>edit</Icon>
+                                            </IconButton>
+                                        </Grid>
                                         <Grid item xs={12} sm={5}>
                                             <Typography>{row.titulo}</Typography>
                                         </Grid>

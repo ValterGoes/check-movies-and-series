@@ -1,9 +1,12 @@
-import { Routes, Route, Navigate} from 'react-router-dom';
-import { useDrawerContext } from '../shared/contexts';
 import { useEffect } from 'react';
+import { Routes, Route, Navigate} from 'react-router-dom';
+
 import { Home } from '../pages/home/Home';
+import { useDrawerContext } from '../shared/contexts';
 import { ListagemDeSeries} from '../pages/serie/ListagemDeSeries';
 import { ListagemDeFilmes } from '../pages/filme/ListagemDeFilmes';
+import { DetalheDoFilme } from '../pages/filme/DetalheDoFilme';
+import { DetalheDaSerie } from '../pages/serie/DetalheDaSerie';
 
 
 
@@ -26,8 +29,8 @@ export const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/filmes" element={<ListagemDeFilmes />} />
             <Route path="/series" element={<ListagemDeSeries />} />
-            <Route path="/filmes/detalhe/:id" element={<p>detalhe</p>} />
-            <Route path="/series/detalhe/:id" element={<p>detalhe</p>} />
+            <Route path="/filmes/detalhe/:id" element={<DetalheDoFilme/>} />
+            <Route path="/series/detalhe/:id" element={<DetalheDaSerie/>} />
 
             {/* redireciona para a rota /Home caso o usuário digite uma rota inválida */}
             <Route path="*" element={<Navigate to="/"/>} />
