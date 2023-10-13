@@ -2,7 +2,7 @@
   "filmes": [
     {
       "id": 1,
-      "imagem": "",
+      "imagem": "https://cinema10.com.br/upload/filmes/filmes_524_O-Poderoso-Chefao-Poster.jpg?default=poster",
       "titulo": "O Poderoso Chefão",
       "ano": 1972,
       "genero": "Drama",
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "imagem": "",
+      "imagem": "https://cinema10.com.br/upload/filmes/filmes_1021_O%20Poderoso%20Chefao%202%20Poster.jpg?default=poster",
       "titulo": "O Poderoso Chefão 2",
       "ano": 1972,
       "genero": "Drama",
@@ -22,19 +22,79 @@
     },
     {
       "id": 3,
-      "imagem": "",
+      "imagem": "https://assistironline.net/wp-content/uploads/elementor/thumbs/assistir-O-Poderoso-Chefao-Parte-III-1990-online-oweciakb9rmq3bvyc4lah7atnitirqsnar9wr25m7s.jpg",
       "titulo": "O Poderoso Chefão 3",
       "ano": 1972,
       "genero": "Drama",
       "diretor": "Francis Ford Coppola",
       "atores": "Marlon Brando, Al Pacino, James Caan",
       "sinopse": "A saga de uma família mafiosa italiana que luta para estabelecer sua supremacia nos Estados Unidos no após-guerra. Uma tentativa de assassinato deixa Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios. Sonny não tem a menor condição de manter a posição de seu pai e, por conta disso, uma guerra com as outras famílias da máfia se inicia. Enquanto isso, Michael cuida para que a família não entre em uma guerra de gangues."
+    },
+    {
+      "id": 4,
+      "imagem": "https://m.media-amazon.com/images/M/MV5BNWI1NjkxM2MtOTU4My00YzQ5LTliNGMtNmFlM2U5NWM3MDY1XkEyXkFqcGdeQXVyNTUyMzE4Mzg@._V1_FMjpg_UX1000_.jpg",
+      "titulo": "Transformers",
+      "ano": 2007,
+      "genero": "Ação",
+      "diretor": "Michael Bay",
+      "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
+      "sinopse": "Adolescente do ensino médio Sam Witwicky compra seu primeiro carro, que é na verdade o Autobot Bumblebee. Bumblebee defende Sam e sua namorada Mikaela Banes de Decepticon Barricade, antes de apresentar a ambos para os outros Autobots. Eles recebem a tarefa de salvar o Allspark de Megatron."
+    },
+    {
+      "id": 5,
+      "imagem": "https://media.fstatic.com/QC8n_fBtm1uhm2jcSR-kWUIyROI=/322x478/smart/filters:format(webp)/media/movies/covers/2010/10/3ae1805667cee19fc5c5cd998f2b0323.jpg",
+      "titulo": "Transformers: A Vingança dos Derrotados",
+      "ano": 2009,
+      "genero": "Ação",
+      "diretor": "Michael Bay",
+      "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
+      "sinopse": "Sam Witwicky deixa os Autobots por uma vida normal. Mas quando sua mente é cheia de símbolos criptográficos, o governo dos EUA pede a ajuda dos Autobots. Sam então se junta aos Autobots e ajuda a derrotar os Decepticons, que pretendem usar o conhecimento de Sam para assumir o poder."
+    },
+    {
+      "id": 6,
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/b/bf/Transformers_dark_of_the_moon_ver5.jpg",
+      "titulo": "Transformers: O Lado Oculto da Lua",
+      "ano": 2011,
+      "genero": "Ação",
+      "diretor": "Michael Bay",
+      "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
+      "sinopse": "Os Autobots aprenderam da existência de um Cybertroniano chamado Sentinel Prime, que escapou de Cybertron durante a guerra. Eles também aprenderam da existência de uma nave Cybertroniana escondida na Lua e correm para chegar lá antes dos Decepticons, que planejam usá-lo para seus próprios fins."
+    },
+    {
+      "id": 7,
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/1/1a/Age_of_Extinction.jpg",
+      "titulo": "Transformers: A Era da Extinção",
+      "ano": 2014,
+      "genero": "Ação",
+      "diretor": "Michael Bay",
+      "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
+      "sinopse": "Cade Yeager, um inventor, descobre um Transformer enterrado. Ele recebe a atenção tanto dos Autobots quanto dos Decepticons enquanto tenta permanecer fora do alcance deles."
+    },
+    {
+      "id": 8,
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/2/28/Transformers_The_Last_Knight.jpg",
+      "titulo": "Transformers: O Último Cavaleiro",
+      "ano": 2017,
+      "genero": "Ação",
+      "diretor": "Michael Bay",
+      "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
+      "sinopse": "Optimus Prime encontra seu planeta natal, Cybertron, agora um planeta morto, e descobre que ele foi responsável por matá-lo. Ele encontra uma maneira de trazer o planeta de volta à vida, mas para isso precisa encontrar um artefato que está na Terra."
+    },
+    {
+      "id": 9,
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/thumb/6/69/The_Avengers_Cartaz.jpg/250px-The_Avengers_Cartaz.jpg",
+      "titulo": "Vingadores",
+      "ano": 2012,
+      "genero": "Ação",
+      "diretor": "Joss Whedon",
+      "atores": "Robert Downey Jr., Chris Evans, Scarlett Johansson",
+      "sinopse": "Loki, o irmão de Thor, ganha acesso ao poder ilimitado do cubo cósmico ao roubá-lo de S.H.I.E.L.D. Nick Fury, o diretor desta agência internacional que mantém a paz, logo reúne os únicos super-heróis que serão capazes de defender a Terra de ameaças sem precedentes."
     }
   ],
   "series": [
     {
         "id":1,
-        "imagem":"",
+        "imagem":"https://m.media-amazon.com/images/I/51O2ySDwX8L._AC_UF894,1000_QL80_.jpg",
         "titulo":"Braking Bad",
         "ano":2008,
         "genero":"Drama",
@@ -44,7 +104,7 @@
     },
     {
         "id":2,
-        "imagem":"",
+        "imagem":"https://m.media-amazon.com/images/M/MV5BMGJlMGIyYzktZjE4Yy00ZmFkLTgxNWQtMjAxNDNmNmRjNDczXkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_.jpg",
         "titulo":"Prison Break",
         "ano":2005,
         "genero":"Drama",
@@ -54,13 +114,43 @@
     },
     {
         "id":3,
-        "imagem":"",
+        "imagem":"https://upload.wikimedia.org/wikipedia/pt/a/a2/TheWalkingDead-P%C3%B4ster.jpg",
         "titulo":"The Walking Dead",
         "ano":2010,
         "genero":"Drama",
         "diretor":"Frank Darabont",
         "atores":"Andrew Lincoln, Norman Reedus, Melissa McBride",
         "sinopse":"Ao acordar de um coma em um hospital abandonado, o policial Rick Grimes percebe que o mundo que ele conhecia não existe mais porque foi arrasado por uma epidemia de zumbis de dimensões apocalípticas. Perto dali, nos arredores de Atlanta, um grupo luta para sobreviver em um pequeno acampamento enquanto \"os mortos\" os perseguem o tempo todo. Será que Rick e os outros conseguirão manter sua condição humana e sobreviver nesse mundo novo e assustador? Será que eles se salvarão em um cenário tão difícil e enfrentando tantas rivalidades?"
+    },
+    {
+      "id":4,
+      "imagem":"https://m.media-amazon.com/images/M/MV5BZWNlZmNiNzItYWMwNC00ODYxLThlNjYtMjU3NzlmNDQxMTY2XkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_QL75_UX190_CR0,2,190,281_.jpg",
+      "titulo":"Vikings",
+      "ano":2013,
+      "genero":"Drama",
+      "diretor":"Michael Hirst",
+      "atores":"Katheryn Winnick, Gustaf Skarsgård, Alexander Ludwig",
+      "sinopse":"Ragnar Lothbrok, um jovem que se considera descendente de Odin, é um guerreiro, fazendeiro e chefe de família. Visionário e sonhando viver diversas aventuras, ele acredita que as riquezas sonhadas por seu povo encontram-se além do mar Báltico. Mas para conseguir conquistá-las ele precisa convencer Earl Haraldson, o líder de seu povo, a permitir que ele e seus guerreiros viagem em direção à Inglaterra."
+    },
+    {
+      "id":5,
+      "imagem": " ",
+      "titulo":"Top Boy summerhouse",
+      "ano":2011,
+      "genero":"Drama",
+      "diretor":"Ronan Bennett",
+      "atores":"Ashley Walters, Kane Robinson, Shone Romulus",
+      "sinopse": "Dois traficantes experientes retornam às ruas de Londres e devem enfrentar um bandido jovem e impiedoso em busca de dinheiro e poder."
+    },
+    {
+      "id": 6,
+      "ïmagem": "https://media.s-bol.com/P6NJDrYxGxyy/j2WBxOR/550x772.jpg",
+      "titulo":"Grey's Anatomy",
+      "ano":2005,
+      "genero":"Drama",
+      "diretor":"Shonda Rhimes",
+      "atores":"Ellen Pompeo, Chandra Wilson, James Pickens Jr.",
+      "sinopse": "Meredith Grey (Ellen Pompeo) começa a trabalhar no Seattle Grace Hospital e logo descobre que passou a noite com um dos seus chefes, Dr. Derek Shepherd (Patrick Dempsey). Enquanto enfrenta os desafios da vida profissional, ela se aproxima dos outros internos liderados pela residente Dra. Bailey (Chandra Wilson): Cristina Yang (Sandra Oh), Izzie Stevens (Katherine Heigl), George O'Malley (T.R. Knight) e Alex Karev (Justin Chambers)."
     }
   ]
 }

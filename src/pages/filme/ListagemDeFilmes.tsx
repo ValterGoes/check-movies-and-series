@@ -1,6 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
-import { LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Grid, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Typography } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
+import { ExpandMore } from '@mui/icons-material';
 
 import { FilmesService, IListagemFIlme } from '../../shared/services/api/filmes/FilmesService';
 import { FerramentasDaListagem } from '../../shared/components';
@@ -9,26 +10,35 @@ import { useDebounce } from '../../shared/hooks';
 import { Environment } from '../../shared/environment';
 
 
+
 export const ListagemDeFilmes: React.FC = () => {
+    // pesquisa por nome do filme
     const [searchParams, setSearchParams] = useSearchParams();
+    // hook de debounce
     const { debounce} = useDebounce();
-
+    // lista de filmes que será exibida na tela
     const [rows, setRows] = useState<IListagemFIlme[]>([]);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // esatdo de carregamento da lista de filmes
     const [isLoading, setIsLoading] = useState(true);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // total de filmes
     const [totalCount, setTotalCount] = useState(0);
-
+    // busca por nome do filme
     const busca = useMemo(() => {
         return searchParams.get('busca') ?? '';
+    }, [searchParams]);
+    // paginação
+    const pagina = useMemo(() => {
+        return Number(searchParams.get('pagina') ?? '');
     }, [searchParams]);
 
 
     useEffect(() => {
+        // carregando a lista de filmes
         setIsLoading(true);
 
+        // carregando a lista de filmes
         debounce(() => {
-            FilmesService.getAll(1, busca)
+            FilmesService.getAll(pagina, busca)
                 .then((result) => {
                     setIsLoading(false);
 
@@ -45,9 +55,10 @@ export const ListagemDeFilmes: React.FC = () => {
 
         console.log('busca', busca);
 
-    }, [busca]);
+    }, [busca, pagina]);
 
     return (
+
         <LayoutBaseDePagina
             titulo="Filmes"
             barraDeFerramentas= {
@@ -55,32 +66,55 @@ export const ListagemDeFilmes: React.FC = () => {
                     mostrarInputBusca
                     textoBotaoNovo='Novo Filme'
                     textoDaBusca={busca}
-                    aoMudarTextoDaBusca={texto => setSearchParams({ busca: texto }, { replace: true })}
+                    aoMudarTextoDaBusca={texto => setSearchParams({ busca: texto, pagina: '1' }, { replace: true })}
                 />
             }
         >
-            <TableContainer component={ Paper }  sx={{m: 1, width: 'auto'}}>
+            {/* // tabela de filmes */}
+            <TableContainer component={ Paper }  sx={{width: 'auto', margin: '.40rem'}}>
+                            
                 <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Titulo</TableCell>
-                            <TableCell>Ano</TableCell>
-                            <TableCell>Diretor</TableCell>
-                        </TableRow>
-                    </TableHead> 
+                    <TableHead sx={{
+                        display: 'flex',
+                    }}>                 
+                        <TableCell >Titulo</TableCell>
+                        <TableCell >Ano</TableCell>
+                        <TableCell >Diretor</TableCell>
+                    </TableHead>
 
                     <TableBody>
+
                         {rows.map((row) => (
-                            <TableRow key={row.id}>
-                                <TableCell>{row.titulo}</TableCell>
-                                <TableCell>{row.ano}</TableCell>
-                                <TableCell>{row.diretor}</TableCell>
-                            </TableRow>
-                            // <TableRow >
-                            //     <TableCell>{row.imagem}</TableCell>
-                            //     <TableCell sx={{textAlign: 'justify', width: '40rem'}}>{row.sinopse}</TableCell>
-                            // </TableRow>
-                            
+
+                            <Accordion key={row.id}>
+                                <AccordionSummary
+                                    expandIcon={<ExpandMore />}
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                >
+                                    <Grid container >
+                                        <Grid item xs={12} sm={5}>
+                                            <Typography>{row.titulo}</Typography>
+                                        </Grid>
+                                        <Grid item xs={12} sm={2}>
+                                            <Typography>{row.ano}</Typography>
+                                        </Grid>
+                                        <Grid item xs={12} sm={4}>
+                                            <Typography>{row.diretor}</Typography>
+                                        </Grid>
+                                    </Grid>
+                                </AccordionSummary>
+                                <AccordionDetails sx={{m: 3, display: 'flex'}}>
+                                    <Typography>
+                                        <img src={row.imagem} alt={row.titulo} width={150} height={200}/>
+                                    </Typography>
+                                    <Typography sx={{mx: 2, textAlign: 'justify', width: 'auto'}}>
+                                        {row.sinopse}
+                                    </Typography>
+                                </AccordionDetails>
+                                
+                            </Accordion>
+
                         ))}
                     </TableBody> 
 
@@ -88,6 +122,7 @@ export const ListagemDeFilmes: React.FC = () => {
                         <caption>{Environment.LISTAGEM_VAZIA}</caption>
                     )}
 
+                    {/* // footer com paginação da tabela */}
                     <TableFooter>
                         {isLoading && (
                             <TableRow>
@@ -96,10 +131,23 @@ export const ListagemDeFilmes: React.FC = () => {
                                 </TableCell>
                             </TableRow>
                         )}
+
+                        {(totalCount > 0 && totalCount > Environment.LIMITE_DE_FILMES_POR_PAGINA) && (
+                            <TableRow>
+                                <TableCell colSpan={3}>
+                                    <Pagination 
+                                        page={ pagina || 1}
+                                        count={Math.ceil(totalCount / Environment.LIMITE_DE_FILMES_POR_PAGINA)} 
+                                        color='primary'
+                                        onChange={(e, newPage) => setSearchParams({ busca, pagina: newPage.toString() }, { replace: true })}
+                                    />
+                                </TableCell>
+                            </TableRow>
+                        )}
                         
                     </TableFooter>
                                       
-                </Table>
+                </Table> 
             </TableContainer>
         </LayoutBaseDePagina>
     );

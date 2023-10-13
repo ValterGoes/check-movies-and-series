@@ -4,16 +4,20 @@ import { Api } from '../axios-config';
 
 export interface IListagemFIlme {
     id: number;
+    imagem: string;
     titulo: string;
     diretor: string;
     ano: number;
+    sinopse: string;
 }
 
 export interface IDetalheFilme {
     id: number;
+    imagem: string;
     titulo: string;
     diretor: string;
     ano: number;
+    sinopse: string;
 }
 
 type TFilmesComTotalCount = {

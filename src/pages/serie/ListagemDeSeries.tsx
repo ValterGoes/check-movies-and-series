@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { LinearProgress, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Grid, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Typography } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
 
 import { IListagemSeries, SeriesService } from '../../shared/services/api/series/SeriesService';
@@ -7,6 +7,7 @@ import { FerramentasDaListagem } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 import { useDebounce } from '../../shared/hooks';
 import { Environment } from '../../shared/environment';
+import { ExpandMore } from '@mui/icons-material';
 
 
 export const ListagemDeSeries: React.FC = () => {
@@ -23,12 +24,16 @@ export const ListagemDeSeries: React.FC = () => {
         return searchParams.get('busca') ?? '';
     }, [searchParams]);
 
+    const pagina = useMemo(() => {
+        return Number(searchParams.get('pagina') ?? '');
+    }, [searchParams]);
+
 
     useEffect(() => {
         setIsLoading(true);
 
         debounce(() => {
-            SeriesService.getAll(1, busca)
+            SeriesService.getAll(pagina, busca)
                 .then((result) => {
                     setIsLoading(false);
 
@@ -45,7 +50,7 @@ export const ListagemDeSeries: React.FC = () => {
 
         console.log('busca', busca);
 
-    }, [busca]);
+    }, [busca, pagina]);
 
     return (
         <LayoutBaseDePagina
@@ -59,37 +64,58 @@ export const ListagemDeSeries: React.FC = () => {
                 />
             }
         >
-            {/* // Adicionar codigo que ao clicar no titulo abra a imagem e a sinopse */}
-            <TableContainer component={ Paper }  sx={{m: 1, width: 'auto'}}>
+            <TableContainer component={ Paper }  sx={{width: 'auto', margin: '.40rem'}}>
+                            
                 <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Titulo</TableCell>
-                            <TableCell>Ano</TableCell>
-                            <TableCell>Diretor</TableCell>
-                        </TableRow>
-                    </TableHead> 
+                    <TableHead sx={{
+                        display: 'flex',
+                    }}>                 
+                        <TableCell >Titulo</TableCell>
+                        <TableCell >Ano</TableCell>
+                        <TableCell >Diretor</TableCell>
+                    </TableHead>
 
                     <TableBody>
+
                         {rows.map((row) => (
-                            
-                            <TableRow key={row.id}>
-                                <TableCell>{row.titulo}</TableCell>
-                                <TableCell>{row.ano}</TableCell>
-                                <TableCell>{row.diretor}</TableCell>
-                            </TableRow>
-                            // <TableRow >
-                            //     <TableCell>{row.imagem}</TableCell>
-                            //     <TableCell sx={{textAlign: 'justify', width: '40rem'}}>{row.sinopse}</TableCell>
-                            // </TableRow>
-                            
+
+                            <Accordion key={row.id}>
+                                <AccordionSummary
+                                    expandIcon={<ExpandMore />}
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                >
+                                    <Grid container >
+                                        <Grid item xs={12} sm={5}>
+                                            <Typography>{row.titulo}</Typography>
+                                        </Grid>
+                                        <Grid item xs={12} sm={2}>
+                                            <Typography>{row.ano}</Typography>
+                                        </Grid>
+                                        <Grid item xs={12} sm={4}>
+                                            <Typography>{row.diretor}</Typography>
+                                        </Grid>
+                                    </Grid>
+                                </AccordionSummary>
+                                <AccordionDetails sx={{m: 3, display: 'flex'}}>
+                                    <Typography>
+                                        <img src={row.imagem} alt={row.titulo} width={150} height={200}/>
+                                    </Typography>
+                                    <Typography sx={{mx: 2, textAlign: 'justify', width: 'auto'}}>
+                                        {row.sinopse}
+                                    </Typography>
+                                </AccordionDetails>
+                                
+                            </Accordion>
+
                         ))}
-                    </TableBody>
+                    </TableBody> 
 
                     {totalCount === 0 && !isLoading &&( 
                         <caption>{Environment.LISTAGEM_VAZIA}</caption>
                     )}
 
+                    {/* // footer com paginação da tabela */}
                     <TableFooter>
                         {isLoading && (
                             <TableRow>
@@ -98,10 +124,23 @@ export const ListagemDeSeries: React.FC = () => {
                                 </TableCell>
                             </TableRow>
                         )}
+
+                        {(totalCount > 0 && totalCount > Environment.LIMITE_DE_FILMES_POR_PAGINA) && (
+                            <TableRow>
+                                <TableCell colSpan={3}>
+                                    <Pagination 
+                                        page={ pagina || 1}
+                                        count={Math.ceil(totalCount / Environment.LIMITE_DE_FILMES_POR_PAGINA)} 
+                                        color='primary'
+                                        onChange={(e, newPage) => setSearchParams({ busca, pagina: newPage.toString() }, { replace: true })}
+                                    />
+                                </TableCell>
+                            </TableRow>
+                        )}
                         
                     </TableFooter>
-                                   
-                </Table>
+                                      
+                </Table> 
             </TableContainer>
         </LayoutBaseDePagina>
     );
