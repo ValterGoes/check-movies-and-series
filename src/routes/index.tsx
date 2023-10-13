@@ -26,6 +26,8 @@ export const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/filmes" element={<ListagemDeFilmes />} />
             <Route path="/series" element={<ListagemDeSeries />} />
+            <Route path="/filmes/detalhe/:id" element={<p>detalhe</p>} />
+            <Route path="/series/detalhe/:id" element={<p>detalhe</p>} />
 
             {/* redireciona para a rota /Home caso o usuário digite uma rota inválida */}
             <Route path="*" element={<Navigate to="/"/>} />

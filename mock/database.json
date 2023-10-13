@@ -1,16 +1,6 @@
 {
   "filmes": [
     {
-      "id": 1,
-      "imagem": "https://cinema10.com.br/upload/filmes/filmes_524_O-Poderoso-Chefao-Poster.jpg?default=poster",
-      "titulo": "O Poderoso Chefão",
-      "ano": 1972,
-      "genero": "Drama",
-      "diretor": "Francis Ford Coppola",
-      "atores": "Marlon Brando, Al Pacino, James Caan",
-      "sinopse": "A saga de uma família mafiosa italiana que luta para estabelecer sua supremacia nos Estados Unidos no após-guerra. Uma tentativa de assassinato deixa Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios. Sonny não tem a menor condição de manter a posição de seu pai e, por conta disso, uma guerra com as outras famílias da máfia se inicia. Enquanto isso, Michael cuida para que a família não entre em uma guerra de gangues."
-    },
-    {
       "id": 2,
       "imagem": "https://cinema10.com.br/upload/filmes/filmes_1021_O%20Poderoso%20Chefao%202%20Poster.jpg?default=poster",
       "titulo": "O Poderoso Chefão 2",
@@ -69,87 +59,67 @@
       "diretor": "Michael Bay",
       "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
       "sinopse": "Cade Yeager, um inventor, descobre um Transformer enterrado. Ele recebe a atenção tanto dos Autobots quanto dos Decepticons enquanto tenta permanecer fora do alcance deles."
-    },
-    {
-      "id": 8,
-      "imagem": "https://upload.wikimedia.org/wikipedia/pt/2/28/Transformers_The_Last_Knight.jpg",
-      "titulo": "Transformers: O Último Cavaleiro",
-      "ano": 2017,
-      "genero": "Ação",
-      "diretor": "Michael Bay",
-      "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
-      "sinopse": "Optimus Prime encontra seu planeta natal, Cybertron, agora um planeta morto, e descobre que ele foi responsável por matá-lo. Ele encontra uma maneira de trazer o planeta de volta à vida, mas para isso precisa encontrar um artefato que está na Terra."
-    },
-    {
-      "id": 9,
-      "imagem": "https://upload.wikimedia.org/wikipedia/pt/thumb/6/69/The_Avengers_Cartaz.jpg/250px-The_Avengers_Cartaz.jpg",
-      "titulo": "Vingadores",
-      "ano": 2012,
-      "genero": "Ação",
-      "diretor": "Joss Whedon",
-      "atores": "Robert Downey Jr., Chris Evans, Scarlett Johansson",
-      "sinopse": "Loki, o irmão de Thor, ganha acesso ao poder ilimitado do cubo cósmico ao roubá-lo de S.H.I.E.L.D. Nick Fury, o diretor desta agência internacional que mantém a paz, logo reúne os únicos super-heróis que serão capazes de defender a Terra de ameaças sem precedentes."
     }
   ],
   "series": [
     {
-        "id":1,
-        "imagem":"https://m.media-amazon.com/images/I/51O2ySDwX8L._AC_UF894,1000_QL80_.jpg",
-        "titulo":"Braking Bad",
-        "ano":2008,
-        "genero":"Drama",
-        "diretor":"Vince Gilligan",
-        "atores":"Bryan Cranston, Aaron Paul, Anna Gunn",
-        "sinopse":"Walter White é um professor de química na casa dos 50 anos que trabalha em uma escola secundária no Novo México. Para atender às necessidades de Skyler, sua esposa grávida, e Walt Junior, seu filho deficiente físico, ele tem que trabalhar duplamente. Sua vida fica ainda mais complicada quando descobre que está sofrendo de um câncer de pulmão incurável. Para aumentar rapidamente a quantidade de dinheiro que deixaria para sua família após sua morte, Walter usa seu conhecimento de química para fazer e vender metanfetamina, uma droga sintética. Ele conta com a ajuda do ex-aluno e pequeno traficante Jesse e enfrenta vários desafios, incluindo o fato de seu concunhado ser um importante nome dentro da Agência Anti-Drogas da região."
+      "id": 1,
+      "imagem": "https://m.media-amazon.com/images/I/51O2ySDwX8L._AC_UF894,1000_QL80_.jpg",
+      "titulo": "Braking Bad",
+      "ano": 2008,
+      "genero": "Drama",
+      "diretor": "Vince Gilligan",
+      "atores": "Bryan Cranston, Aaron Paul, Anna Gunn",
+      "sinopse": "Walter White é um professor de química na casa dos 50 anos que trabalha em uma escola secundária no Novo México. Para atender às necessidades de Skyler, sua esposa grávida, e Walt Junior, seu filho deficiente físico, ele tem que trabalhar duplamente. Sua vida fica ainda mais complicada quando descobre que está sofrendo de um câncer de pulmão incurável. Para aumentar rapidamente a quantidade de dinheiro que deixaria para sua família após sua morte, Walter usa seu conhecimento de química para fazer e vender metanfetamina, uma droga sintética. Ele conta com a ajuda do ex-aluno e pequeno traficante Jesse e enfrenta vários desafios, incluindo o fato de seu concunhado ser um importante nome dentro da Agência Anti-Drogas da região."
     },
     {
-        "id":2,
-        "imagem":"https://m.media-amazon.com/images/M/MV5BMGJlMGIyYzktZjE4Yy00ZmFkLTgxNWQtMjAxNDNmNmRjNDczXkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_.jpg",
-        "titulo":"Prison Break",
-        "ano":2005,
-        "genero":"Drama",
-        "diretor":"Paul Scheuring",
-        "atores":"Dominic Purcell, Wentworth Miller, Amaury Nolasco",
-        "sinopse":"Michael Scofield é um homem desesperado numa situação desesperadora. Seu irmão, Lincoln Burrows, está no corredor da morte e será executado em alguns meses, após ser condenado por um assassinato que Michael está convencido que Lincoln não cometeu. Sem outras opções e com o tempo diminuindo, Michael assalta um banco para que ele seja preso e levado para a penitenciária estadual Fox River, o mesmo local onde seu irmão está cumprindo pena. Uma vez lá dentro, Michael um engenheiro civil com as plantas da prisão começa a executar um elaborado plano para libertar Lincoln e provar a inocência dele."
+      "id": 2,
+      "imagem": "https://m.media-amazon.com/images/M/MV5BMGJlMGIyYzktZjE4Yy00ZmFkLTgxNWQtMjAxNDNmNmRjNDczXkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_.jpg",
+      "titulo": "Prison Break",
+      "ano": 2005,
+      "genero": "Drama",
+      "diretor": "Paul Scheuring",
+      "atores": "Dominic Purcell, Wentworth Miller, Amaury Nolasco",
+      "sinopse": "Michael Scofield é um homem desesperado numa situação desesperadora. Seu irmão, Lincoln Burrows, está no corredor da morte e será executado em alguns meses, após ser condenado por um assassinato que Michael está convencido que Lincoln não cometeu. Sem outras opções e com o tempo diminuindo, Michael assalta um banco para que ele seja preso e levado para a penitenciária estadual Fox River, o mesmo local onde seu irmão está cumprindo pena. Uma vez lá dentro, Michael um engenheiro civil com as plantas da prisão começa a executar um elaborado plano para libertar Lincoln e provar a inocência dele."
     },
     {
-        "id":3,
-        "imagem":"https://upload.wikimedia.org/wikipedia/pt/a/a2/TheWalkingDead-P%C3%B4ster.jpg",
-        "titulo":"The Walking Dead",
-        "ano":2010,
-        "genero":"Drama",
-        "diretor":"Frank Darabont",
-        "atores":"Andrew Lincoln, Norman Reedus, Melissa McBride",
-        "sinopse":"Ao acordar de um coma em um hospital abandonado, o policial Rick Grimes percebe que o mundo que ele conhecia não existe mais porque foi arrasado por uma epidemia de zumbis de dimensões apocalípticas. Perto dali, nos arredores de Atlanta, um grupo luta para sobreviver em um pequeno acampamento enquanto \"os mortos\" os perseguem o tempo todo. Será que Rick e os outros conseguirão manter sua condição humana e sobreviver nesse mundo novo e assustador? Será que eles se salvarão em um cenário tão difícil e enfrentando tantas rivalidades?"
+      "id": 3,
+      "imagem": "https://upload.wikimedia.org/wikipedia/pt/a/a2/TheWalkingDead-P%C3%B4ster.jpg",
+      "titulo": "The Walking Dead",
+      "ano": 2010,
+      "genero": "Drama",
+      "diretor": "Frank Darabont",
+      "atores": "Andrew Lincoln, Norman Reedus, Melissa McBride",
+      "sinopse": "Ao acordar de um coma em um hospital abandonado, o policial Rick Grimes percebe que o mundo que ele conhecia não existe mais porque foi arrasado por uma epidemia de zumbis de dimensões apocalípticas. Perto dali, nos arredores de Atlanta, um grupo luta para sobreviver em um pequeno acampamento enquanto \"os mortos\" os perseguem o tempo todo. Será que Rick e os outros conseguirão manter sua condição humana e sobreviver nesse mundo novo e assustador? Será que eles se salvarão em um cenário tão difícil e enfrentando tantas rivalidades?"
     },
     {
-      "id":4,
-      "imagem":"https://m.media-amazon.com/images/M/MV5BZWNlZmNiNzItYWMwNC00ODYxLThlNjYtMjU3NzlmNDQxMTY2XkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_QL75_UX190_CR0,2,190,281_.jpg",
-      "titulo":"Vikings",
-      "ano":2013,
-      "genero":"Drama",
-      "diretor":"Michael Hirst",
-      "atores":"Katheryn Winnick, Gustaf Skarsgård, Alexander Ludwig",
-      "sinopse":"Ragnar Lothbrok, um jovem que se considera descendente de Odin, é um guerreiro, fazendeiro e chefe de família. Visionário e sonhando viver diversas aventuras, ele acredita que as riquezas sonhadas por seu povo encontram-se além do mar Báltico. Mas para conseguir conquistá-las ele precisa convencer Earl Haraldson, o líder de seu povo, a permitir que ele e seus guerreiros viagem em direção à Inglaterra."
+      "id": 4,
+      "imagem": "https://m.media-amazon.com/images/M/MV5BZWNlZmNiNzItYWMwNC00ODYxLThlNjYtMjU3NzlmNDQxMTY2XkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_QL75_UX190_CR0,2,190,281_.jpg",
+      "titulo": "Vikings",
+      "ano": 2013,
+      "genero": "Drama",
+      "diretor": "Michael Hirst",
+      "atores": "Katheryn Winnick, Gustaf Skarsgård, Alexander Ludwig",
+      "sinopse": "Ragnar Lothbrok, um jovem que se considera descendente de Odin, é um guerreiro, fazendeiro e chefe de família. Visionário e sonhando viver diversas aventuras, ele acredita que as riquezas sonhadas por seu povo encontram-se além do mar Báltico. Mas para conseguir conquistá-las ele precisa convencer Earl Haraldson, o líder de seu povo, a permitir que ele e seus guerreiros viagem em direção à Inglaterra."
     },
     {
-      "id":5,
+      "id": 5,
       "imagem": " ",
-      "titulo":"Top Boy summerhouse",
-      "ano":2011,
-      "genero":"Drama",
-      "diretor":"Ronan Bennett",
-      "atores":"Ashley Walters, Kane Robinson, Shone Romulus",
+      "titulo": "Top Boy summerhouse",
+      "ano": 2011,
+      "genero": "Drama",
+      "diretor": "Ronan Bennett",
+      "atores": "Ashley Walters, Kane Robinson, Shone Romulus",
       "sinopse": "Dois traficantes experientes retornam às ruas de Londres e devem enfrentar um bandido jovem e impiedoso em busca de dinheiro e poder."
     },
     {
       "id": 6,
       "ïmagem": "https://media.s-bol.com/P6NJDrYxGxyy/j2WBxOR/550x772.jpg",
-      "titulo":"Grey's Anatomy",
-      "ano":2005,
-      "genero":"Drama",
-      "diretor":"Shonda Rhimes",
-      "atores":"Ellen Pompeo, Chandra Wilson, James Pickens Jr.",
+      "titulo": "Grey's Anatomy",
+      "ano": 2005,
+      "genero": "Drama",
+      "diretor": "Shonda Rhimes",
+      "atores": "Ellen Pompeo, Chandra Wilson, James Pickens Jr.",
       "sinopse": "Meredith Grey (Ellen Pompeo) começa a trabalhar no Seattle Grace Hospital e logo descobre que passou a noite com um dos seus chefes, Dr. Derek Shepherd (Patrick Dempsey). Enquanto enfrenta os desafios da vida profissional, ela se aproxima dos outros internos liderados pela residente Dra. Bailey (Chandra Wilson): Cristina Yang (Sandra Oh), Izzie Stevens (Katherine Heigl), George O'Malley (T.R. Knight) e Alex Karev (Justin Chambers)."
     }
   ]

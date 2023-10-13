@@ -1,5 +1,5 @@
-import { useSearchParams } from 'react-router-dom';
-import { Accordion, AccordionDetails, AccordionSummary, Grid, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Typography } from '@mui/material';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import { Accordion, AccordionDetails, AccordionSummary, Grid, Icon, IconButton, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Typography } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
 import { ExpandMore } from '@mui/icons-material';
 
@@ -16,6 +16,9 @@ export const ListagemDeFilmes: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     // hook de debounce
     const { debounce} = useDebounce();
+
+    const navigate = useNavigate();
+
     // lista de filmes que será exibida na tela
     const [rows, setRows] = useState<IListagemFIlme[]>([]);
     // esatdo de carregamento da lista de filmes
@@ -57,6 +60,21 @@ export const ListagemDeFilmes: React.FC = () => {
 
     }, [busca, pagina]);
 
+    const handleDelete = (id: number) => {
+        if (confirm('Realmente deseja Apagar?')) {
+            FilmesService.deleteById(id)
+                .then(result => {
+                    if (result instanceof Error) {
+                        alert(result.message || 'Erro ao apagar');
+                    } else {
+                        setRows(rows.filter(row => row.id !== id));
+                        alert('Apagado com sucesso');
+                    }
+                });
+        }
+    };
+    
+    
     return (
 
         <LayoutBaseDePagina
@@ -76,7 +94,8 @@ export const ListagemDeFilmes: React.FC = () => {
                 <Table>
                     <TableHead sx={{
                         display: 'flex',
-                    }}>                 
+                    }}>  
+                        <TableCell > </TableCell>               
                         <TableCell >Titulo</TableCell>
                         <TableCell >Ano</TableCell>
                         <TableCell >Diretor</TableCell>
@@ -93,6 +112,14 @@ export const ListagemDeFilmes: React.FC = () => {
                                     id="panel1a-header"
                                 >
                                     <Grid container >
+                                        <Grid item xs={12} sm={1}>
+                                            <IconButton size='small' onClick={() => handleDelete(row.id)}> 
+                                                <Icon>delete</Icon> 
+                                            </IconButton>
+                                            <IconButton size='small' onClick={() => navigate(`/filmes/detalhe/${row.id}`)}> 
+                                                <Icon>edit</Icon>
+                                            </IconButton>
+                                        </Grid>
                                         <Grid item xs={12} sm={5}>
                                             <Typography>{row.titulo}</Typography>
                                         </Grid>
