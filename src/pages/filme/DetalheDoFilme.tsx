@@ -1,15 +1,26 @@
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { LinearProgress } from '@mui/material';
+import { FormHandles } from '@unform/core';
+import { Form } from '@unform/web';
+
 import { FerramentasDeDetalhe } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 import { FilmesService } from '../../shared/services/api/filmes/FilmesService';
-import { useEffect, useState } from 'react';
-import { LinearProgress } from '@mui/material';
+import { VTextField } from '../../shared/forms/VTextField';
 
 
+interface IFormData {
+    titulo: string;
+    ano: string;
+    diretor: string;
+}
 
 export const DetalheDoFilme: React.FC = () => {
     const { id = 'novo' } = useParams<'id'>();
     const navigate = useNavigate();
+
+    const formRef = useRef<FormHandles>(null);
 
     const [isLoading, setIsLoading] = useState(false);
     const [titulo, setTitulo] = useState('');
@@ -34,8 +45,9 @@ export const DetalheDoFilme: React.FC = () => {
     }, [id]);
     
 
-    const handleSave = () => {
-        alert('salvar');
+    const handleSave = (dados: IFormData) => {
+        // alert('salvar');
+        console.log(dados);
     };
 
     const handleDelete = (id: number) => {
@@ -64,7 +76,7 @@ export const DetalheDoFilme: React.FC = () => {
                     mostarBotaoNovo={id !== 'novo'}               
                     mostarBotaoApagar={id !== 'novo'}
 
-                    aoClicarEmSalvar={handleSave}
+                    aoClicarEmSalvar={() => formRef.current?.submitForm()}
                     aoClicarEmVoltar={() => navigate('/filmes')}
                     aoClicarEmNovo={() => navigate('/filmes/detalhe/novo')}
                     aoClicarEmApagar={() => handleDelete(Number(id))}
@@ -73,7 +85,13 @@ export const DetalheDoFilme: React.FC = () => {
         >
             {isLoading && <LinearProgress variant='indeterminate' />}
 
-            <p>Detalhe dos Filmes {id}</p>           
+            <Form ref={formRef} onSubmit={handleSave}>
+
+                <VTextField name='titulo' />
+                <VTextField name='ano' />
+                <VTextField name='diretor' />
+
+            </Form>     
 
         </LayoutBaseDePagina>
     );
