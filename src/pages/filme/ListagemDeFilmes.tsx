@@ -1,13 +1,13 @@
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Accordion, AccordionDetails, AccordionSummary, Grid, Icon, IconButton, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Typography } from '@mui/material';
-import { useEffect, useMemo, useState } from 'react';
 import { ExpandMore } from '@mui/icons-material';
 
 import { FilmesService, IListagemFIlme } from '../../shared/services/api/filmes/FilmesService';
 import { FerramentasDaListagem } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
-import { useDebounce } from '../../shared/hooks';
 import { Environment } from '../../shared/environment';
+import { useDebounce } from '../../shared/hooks';
 
 
 
@@ -18,7 +18,6 @@ export const ListagemDeFilmes: React.FC = () => {
     const { debounce} = useDebounce();
 
     const navigate = useNavigate();
-
     // lista de filmes que será exibida na tela
     const [rows, setRows] = useState<IListagemFIlme[]>([]);
     // esatdo de carregamento da lista de filmes
@@ -74,7 +73,7 @@ export const ListagemDeFilmes: React.FC = () => {
         }
     };
     
-    
+
     return (
 
         <LayoutBaseDePagina

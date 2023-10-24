@@ -4,16 +4,19 @@ import { LinearProgress } from '@mui/material';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 
-import { FerramentasDeDetalhe } from '../../shared/components';
-import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 import { FilmesService } from '../../shared/services/api/filmes/FilmesService';
+import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
+import { FerramentasDeDetalhe } from '../../shared/components';
 import { VTextField } from '../../shared/forms/VTextField';
 
 
 interface IFormData {
+    id: number;
+    imagem: string;
     titulo: string;
-    ano: string;
     diretor: string;
+    ano: number;
+    sinopse: string;
 }
 
 export const DetalheDoFilme: React.FC = () => {
@@ -39,6 +42,8 @@ export const DetalheDoFilme: React.FC = () => {
                     }else{
                         setTitulo(result.titulo);
                         console.log('result', result);
+
+                        formRef.current?.setData(result);
                     }
                 });
         }
@@ -46,8 +51,33 @@ export const DetalheDoFilme: React.FC = () => {
     
 
     const handleSave = (dados: IFormData) => {
-        // alert('salvar');
-        console.log(dados);
+        setIsLoading(true);
+
+        if (id === 'novo') {
+            FilmesService
+                .create(dados)
+                .then((result) => {
+                    setIsLoading(false);
+
+                    if (result instanceof Error) {
+                        alert(result.message);
+                    } else {
+                        // navigate('/filmes');
+                        navigate(`/filmes/detalhe/${result}`);
+                    }
+                });
+        } else {
+            FilmesService
+                .updateById(Number(id), dados)
+                .then((result) => {
+                    setIsLoading(false);
+
+                    if (result instanceof Error) {
+                        alert(result.message);
+                    } 
+                });
+            
+        }
     };
 
     const handleDelete = (id: number) => {
@@ -87,9 +117,11 @@ export const DetalheDoFilme: React.FC = () => {
 
             <Form ref={formRef} onSubmit={handleSave}>
 
-                <VTextField name='titulo' />
-                <VTextField name='ano' />
-                <VTextField name='diretor' />
+                <VTextField placeholder='Título do Filme' name='titulo' />
+                <VTextField placeholder='Ano de Lançamento' name='ano' />
+                <VTextField placeholder='Diretor' name='diretor' />
+                {/*adicionar campo para foto ou adicionar automaticamente ao adiconar o nome  */}
+                <VTextField placeholder='Sinopse' name='sinopse' />
 
             </Form>     
 

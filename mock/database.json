@@ -99,6 +99,41 @@
       "diretor": "John Singleton",
       "atores": "Paul Walker, Tyrese Gibson, Eva Mendes",
       "sinopse": "Mussun"
+    },
+    {
+      "titulo": " A espera de um milagre",
+      "ano": " 1999",
+      "diretor": " Frank Darabont",
+      "sinopse": " Um carcereiro tem um relacionamento incomum e comovente com um preso que está no corredor na morte: Coffey, um negro enorme, condenado por ter matado brutalmente duas gêmeas de nove anos. Ele tem tamanho e força para matar qualquer um, mas seu comportamento é completamente oposto à sua aparência.",
+      "id": 11
+    },
+    {
+      "titulo": " A outra face",
+      "ano": " 1997",
+      "diretor": " jhon woo",
+      "sinopse": " Agente do FBI troca de rosto com um terrorista para vingar a morte do filho, mas tudo se transforma em um grande pesadelo e ele precisa lutar pela sua vida e também de sua família.",
+      "id": 12
+    },
+    {
+      "titulo": " Con Air - A rota da fuga",
+      "ano": " 1997",
+      "diretor": " Simon West",
+      "sinopse": " Cameron Poe, recém-liberado do exército em liberdade condicional, retorna para sua esposa, mas precisa voltar para casa a bordo de um avião que transporta prisioneiros chamado Jailbird, com alguns dos piores criminosos vivos.",
+      "id": 13
+    },
+    {
+      "titulo": " O sobrevivente",
+      "ano": " 1987",
+      "diretor": " Paul Michael Glaser",
+      "sinopse": " No ano de 2019 a América é um estado totalitário, onde o programa de televisão favorito é o \"The Running Man\", uma competição em que os prisioneiros devem correr para a liberdade e evitar uma morte brutal. ",
+      "id": 14
+    },
+    {
+      "titulo": " Scarface",
+      "ano": " 1983",
+      "diretor": "  Brian De Palma",
+      "sinopse": " Após receber residência permanente nos Estados Unidos em troca do assassinato de um oficial do governo cubano, Tony Montana se torna o chefe do tráfico de drogas em Miami. Matando qualquer um que entre em seu caminho,",
+      "id": 15
     }
   ],
   "series": [
@@ -151,6 +186,20 @@
       "diretor": "Shonda Rhimes",
       "atores": "Ellen Pompeo, Chandra Wilson, James Pickens Jr.",
       "sinopse": "Meredith Grey (Ellen Pompeo) começa a trabalhar no Seattle Grace Hospital e logo descobre que passou a noite com um dos seus chefes, Dr. Derek Shepherd (Patrick Dempsey). Enquanto enfrenta os desafios da vida profissional, ela se aproxima dos outros internos liderados pela residente Dra. Bailey (Chandra Wilson): Cristina Yang (Sandra Oh), Izzie Stevens (Katherine Heigl), George O'Malley (T.R. Knight) e Alex Karev (Justin Chambers)."
+    },
+    {
+      "titulo": "House",
+      "ano": "2004",
+      "diretor": " David Shore, Liz Friedman, Lawrence Kaplow",
+      "sinopse": "No fictício Hospital-Escola Plainsboro de Princeton, no estado de Nova Jersey, o gênio afiado Dr. Gregory House ataca mistérios de saúde como o faria um Sherlock Holmes médico.",
+      "id": 8
+    },
+    {
+      "titulo": " The Last Kingdom",
+      "ano": " 2015",
+      "diretor": " Chrissy Skinns",
+      "sinopse": " Enquanto Alfredo, o Grande, defende seu reino de invasões nórdicas, Uhtred, um saxão criado por vikings, planeja reivindicar o que é seu por direito.",
+      "id": 9
     }
   ]
 }

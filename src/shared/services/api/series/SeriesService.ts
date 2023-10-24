@@ -45,7 +45,7 @@ const getAll = async (page = 1, filter = ''): Promise<TSeriesComTotalCount | Err
 
         console.log(error);
 
-        return new Error((error as {message: string}).message || 'Erro ao listar os Filmes!');        
+        return new Error((error as {message: string}).message || 'Erro ao listar as Séries!');        
     }
 };
 
@@ -64,7 +64,7 @@ const getById = async (id: number ): Promise<IDetalheSeries | Error> => {
 
         console.log(error);
 
-        return new Error((error as { message: string }).message || 'Erro ao consultar o Filme!');
+        return new Error((error as { message: string }).message || 'Erro ao consultar a Série!');
     }
 };
 

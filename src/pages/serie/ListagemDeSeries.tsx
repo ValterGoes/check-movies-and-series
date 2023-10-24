@@ -1,24 +1,28 @@
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Accordion, AccordionDetails, AccordionSummary, Grid, Icon, IconButton, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow, Typography } from '@mui/material';
-import { useEffect, useMemo, useState } from 'react';
+import { ExpandMore } from '@mui/icons-material';
 
 import { IListagemSeries, SeriesService } from '../../shared/services/api/series/SeriesService';
 import { FerramentasDaListagem } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
-import { useDebounce } from '../../shared/hooks';
 import { Environment } from '../../shared/environment';
-import { ExpandMore } from '@mui/icons-material';
+import { useDebounce } from '../../shared/hooks';
+
 
 
 export const ListagemDeSeries: React.FC = () => {
+
     const [searchParams, setSearchParams] = useSearchParams();
+
     const { debounce} = useDebounce();
+
     const navigate = useNavigate();
 
     const [rows, setRows] = useState<IListagemSeries[]>([]);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     const [isLoading, setIsLoading] = useState(true);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     const [totalCount, setTotalCount] = useState(0);
 
     const busca = useMemo(() => {
@@ -31,7 +35,9 @@ export const ListagemDeSeries: React.FC = () => {
 
 
     useEffect(() => {
+
         setIsLoading(true);
+
 
         debounce(() => {
             SeriesService.getAll(pagina, busca)
@@ -53,7 +59,6 @@ export const ListagemDeSeries: React.FC = () => {
 
     }, [busca, pagina]);
 
-
     const handleDelete = (id: number) => {
         if (confirm('Realmente deseja Apagar?')) {
             SeriesService.deleteById(id)
@@ -70,17 +75,20 @@ export const ListagemDeSeries: React.FC = () => {
 
 
     return (
+
         <LayoutBaseDePagina
             titulo="Séries"
             barraDeFerramentas= {
                 <FerramentasDaListagem
                     mostrarInputBusca
-                    textoBotaoNovo='Nova Série'
                     textoDaBusca={busca}
-                    aoMudarTextoDaBusca={texto => setSearchParams({ busca: texto }, { replace: true })}
+                    textoBotaoNovo='Nova Série'
+                    aoClicarEmNovo={() => navigate('/series/detalhe/nova')}
+                    aoMudarTextoDaBusca={texto => setSearchParams({ busca: texto, pagina: '1' }, { replace: true })}
                 />
             }
         >
+
             <TableContainer component={ Paper }  sx={{width: 'auto', margin: '.40rem'}}>
                             
                 <Table>
@@ -151,12 +159,12 @@ export const ListagemDeSeries: React.FC = () => {
                             </TableRow>
                         )}
 
-                        {(totalCount > 0 && totalCount > Environment.LIMITE_DE_FILMES_POR_PAGINA) && (
+                        {(totalCount > 0 && totalCount > Environment.LIMITE_DE_SERIES_POR_PAGINA) && (
                             <TableRow>
                                 <TableCell colSpan={3}>
                                     <Pagination 
                                         page={ pagina || 1}
-                                        count={Math.ceil(totalCount / Environment.LIMITE_DE_FILMES_POR_PAGINA)} 
+                                        count={Math.ceil(totalCount / Environment.LIMITE_DE_SERIES_POR_PAGINA)} 
                                         color='primary'
                                         onChange={(e, newPage) => setSearchParams({ busca, pagina: newPage.toString() }, { replace: true })}
                                     />
