@@ -6,12 +6,12 @@ export const Environment = {
     /**
      * Definie o limite de filmes por página
      */
-    LIMITE_DE_FILMES_POR_PAGINA: 5,
+    LIMITE_DE_FILMES_POR_PAGINA: 4,
 
     /**
      * Definie o limite de filmes por página
      */
-    LIMITE_DE_SERIES_POR_PAGINA: 5,
+    LIMITE_DE_SERIES_POR_PAGINA: 4,
 
     /**
      * Define o valor do campo de busca 

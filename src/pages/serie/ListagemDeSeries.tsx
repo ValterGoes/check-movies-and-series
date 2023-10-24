@@ -88,7 +88,7 @@ export const ListagemDeSeries: React.FC = () => {
                 />
             }
         >
-
+            {/* tabela de séries */}
             <TableContainer component={ Paper }  sx={{width: 'auto', margin: '.40rem'}}>
                             
                 <Table>

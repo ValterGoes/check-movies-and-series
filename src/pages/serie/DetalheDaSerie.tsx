@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { LinearProgress } from '@mui/material';
+import { Box, Grid, LinearProgress, Paper, Typography } from '@mui/material';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 
@@ -29,9 +29,9 @@ export const DetalheDaSerie: React.FC = () => {
     const [titulo, setTitulo] = useState('');
 
     useEffect(() => {
-        setIsLoading(true);
-
         if (id !== 'nova') {
+            setIsLoading(true);
+
             SeriesService.getById(Number(id))
                 .then((result) => {
                     setIsLoading(false);
@@ -113,15 +113,68 @@ export const DetalheDaSerie: React.FC = () => {
                 />
             }
         >
-            {isLoading && <LinearProgress variant='indeterminate' />}
 
             <Form ref={formRef} onSubmit={handleSave}>
 
-                <VTextField placeholder='Título do Série' name='titulo' />
-                <VTextField placeholder='Ano de Lançamento' name='ano' />
-                <VTextField placeholder='Diretor' name='diretor' />
+                <Box margin={1} display="flex" flexDirection="column" component={Paper} variant="outlined">
+
+                    <Grid container direction="column" padding={2} spacing={2}>
+
+                        {isLoading && (
+                            <Grid item>
+                                <LinearProgress variant='indeterminate' />
+                            </Grid>
+                        )}
+
+                        <Grid item>
+                            <Typography variant='h4'>Séries</Typography>
+                        </Grid> 
+                        
+                        <Grid container item direction="row" spacing={2}>
+                            <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+                                <VTextField 
+                                    fullWidth
+                                    name='titulo' 
+                                    label='Título do Série' 
+                                    disabled={isLoading}
+                                    onChange={e => setTitulo(e.target.value)}
+                                />
+                            </Grid>
+                        </Grid>
+                        <Grid container item direction="row" spacing={2}>
+                            <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+                                <VTextField 
+                                    fullWidth
+                                    name='ano' 
+                                    label='Ano de Lançamento' 
+                                    disabled={isLoading}
+                                />
+                            </Grid>
+                        </Grid>
+                        <Grid container item direction="row" spacing={2}>
+                            <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+                                <VTextField 
+                                    fullWidth
+                                    name='diretor' 
+                                    label='Diretor' 
+                                    disabled={isLoading}
+                                />
+                            </Grid>
+                        </Grid>
+                        <Grid container item direction="row" spacing={2}>
+                            <Grid item xs={12} sm={12} md={6} lg={4} xl={2}>
+                                <VTextField 
+                                    fullWidth
+                                    name='sinopse' 
+                                    label='Sinopse' 
+                                    disabled={isLoading}       
+                                />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Box>
+                               
                 {/*adicionar campo para foto ou adicionar automaticamente ao adiconar o nome  */}
-                <VTextField placeholder='Sinopse' name='sinopse' />
 
             </Form>      
 

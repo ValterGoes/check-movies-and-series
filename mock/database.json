@@ -148,7 +148,7 @@
       "sinopse": "Walter White é um professor de química na casa dos 50 anos que trabalha em uma escola secundária no Novo México. Para atender às necessidades de Skyler, sua esposa grávida, e Walt Junior, seu filho deficiente físico, ele tem que trabalhar duplamente. Sua vida fica ainda mais complicada quando descobre que está sofrendo de um câncer de pulmão incurável. Para aumentar rapidamente a quantidade de dinheiro que deixaria para sua família após sua morte, Walter usa seu conhecimento de química para fazer e vender metanfetamina, uma droga sintética. Ele conta com a ajuda do ex-aluno e pequeno traficante Jesse e enfrenta vários desafios, incluindo o fato de seu concunhado ser um importante nome dentro da Agência Anti-Drogas da região."
     },
     {
-      "id": 3,
+      "id": 2,
       "imagem": "https://upload.wikimedia.org/wikipedia/pt/a/a2/TheWalkingDead-P%C3%B4ster.jpg",
       "titulo": "The Walking Dead",
       "ano": 2010,
@@ -158,7 +158,7 @@
       "sinopse": "Ao acordar de um coma em um hospital abandonado, o policial Rick Grimes percebe que o mundo que ele conhecia não existe mais porque foi arrasado por uma epidemia de zumbis de dimensões apocalípticas. Perto dali, nos arredores de Atlanta, um grupo luta para sobreviver em um pequeno acampamento enquanto \"os mortos\" os perseguem o tempo todo. Será que Rick e os outros conseguirão manter sua condição humana e sobreviver nesse mundo novo e assustador? Será que eles se salvarão em um cenário tão difícil e enfrentando tantas rivalidades?"
     },
     {
-      "id": 4,
+      "id": 3,
       "imagem": "https://m.media-amazon.com/images/M/MV5BZWNlZmNiNzItYWMwNC00ODYxLThlNjYtMjU3NzlmNDQxMTY2XkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_QL75_UX190_CR0,2,190,281_.jpg",
       "titulo": "Vikings",
       "ano": 2013,
@@ -168,7 +168,7 @@
       "sinopse": "Ragnar Lothbrok, um jovem que se considera descendente de Odin, é um guerreiro, fazendeiro e chefe de família. Visionário e sonhando viver diversas aventuras, ele acredita que as riquezas sonhadas por seu povo encontram-se além do mar Báltico. Mas para conseguir conquistá-las ele precisa convencer Earl Haraldson, o líder de seu povo, a permitir que ele e seus guerreiros viagem em direção à Inglaterra."
     },
     {
-      "id": 5,
+      "id": 4,
       "imagem": " ",
       "titulo": "Top Boy summerhouse",
       "ano": 2011,
@@ -178,7 +178,7 @@
       "sinopse": "Dois traficantes experientes retornam às ruas de Londres e devem enfrentar um bandido jovem e impiedoso em busca de dinheiro e poder."
     },
     {
-      "id": 6,
+      "id": 5,
       "ïmagem": "https://media.s-bol.com/P6NJDrYxGxyy/j2WBxOR/550x772.jpg",
       "titulo": "Grey's Anatomy",
       "ano": 2005,
@@ -188,17 +188,31 @@
       "sinopse": "Meredith Grey (Ellen Pompeo) começa a trabalhar no Seattle Grace Hospital e logo descobre que passou a noite com um dos seus chefes, Dr. Derek Shepherd (Patrick Dempsey). Enquanto enfrenta os desafios da vida profissional, ela se aproxima dos outros internos liderados pela residente Dra. Bailey (Chandra Wilson): Cristina Yang (Sandra Oh), Izzie Stevens (Katherine Heigl), George O'Malley (T.R. Knight) e Alex Karev (Justin Chambers)."
     },
     {
+      "id": 6,
       "titulo": "House",
       "ano": "2004",
       "diretor": " David Shore, Liz Friedman, Lawrence Kaplow",
-      "sinopse": "No fictício Hospital-Escola Plainsboro de Princeton, no estado de Nova Jersey, o gênio afiado Dr. Gregory House ataca mistérios de saúde como o faria um Sherlock Holmes médico.",
-      "id": 8
+      "sinopse": "No fictício Hospital-Escola Plainsboro de Princeton, no estado de Nova Jersey, o gênio afiado Dr. Gregory House ataca mistérios de saúde como o faria um Sherlock Holmes médico."
     },
     {
+      "id": 7,
       "titulo": " The Last Kingdom",
       "ano": " 2015",
       "diretor": " Chrissy Skinns",
-      "sinopse": " Enquanto Alfredo, o Grande, defende seu reino de invasões nórdicas, Uhtred, um saxão criado por vikings, planeja reivindicar o que é seu por direito.",
+      "sinopse": " Enquanto Alfredo, o Grande, defende seu reino de invasões nórdicas, Uhtred, um saxão criado por vikings, planeja reivindicar o que é seu por direito."
+    },
+    {
+      "id": 8,
+      "titulo": " Ozark",
+      "ano": " 2017",
+      "diretor": " Jason Bateman, Chris Mundy",
+      "sinopse": " Marty, um consultor financeiro, leva a família a um resort em Ozarks para mantê-la segura depois que as suas negociações com um cartel de drogas mexicano dão errado."
+    },
+    {
+      "titulo": " Narcos",
+      "ano": " 2015",
+      "diretor": " Paul Eckstein Mariano Carranco Tim King Lorenzo O'Brien",
+      "sinopse": " Conheça a notória e infame história dos mais violentos cartéis de drogas da Colômbia.",
       "id": 9
     }
   ]

@@ -18,6 +18,7 @@ export const ListagemDeFilmes: React.FC = () => {
     const { debounce} = useDebounce();
 
     const navigate = useNavigate();
+
     // lista de filmes que será exibida na tela
     const [rows, setRows] = useState<IListagemFIlme[]>([]);
     // esatdo de carregamento da lista de filmes
