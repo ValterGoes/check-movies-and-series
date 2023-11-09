@@ -19,6 +19,11 @@ export const Environment = {
     INPUT_DE_BUSCA: 'Pesquisar ...',
 
     /**
+    * texto botão novo para telas menores 
+    */ 
+    TEXTO_NOVO: 'Novo',
+    
+    /**
      * Define a mensagem de erro para o input de busca
      */
     LISTAGEM_VAZIA: 'Nenhum filme encontrado',

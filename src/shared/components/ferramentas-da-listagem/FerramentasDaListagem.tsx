@@ -1,4 +1,4 @@
-import { Box, Button, Icon, Paper, TextField, useTheme } from '@mui/material';
+import { Box, Button, Icon, Paper, TextField, Theme, useMediaQuery, useTheme } from '@mui/material';
 
 import { Environment } from '../../environment';
 
@@ -21,6 +21,7 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
     mostrarBotaoNovo = true
 }) => {
     
+    const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down(425));
     const theme = useTheme();
 
     return (
@@ -38,6 +39,7 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
             {mostrarInputBusca && (
                 <TextField 
                     size="small"
+                    style={{marginRight: 10}}
                     value={textoDaBusca}
                     onChange={(e) => aoMudarTextoDaBusca?.(e.target.value)}
                     placeholder={ Environment.INPUT_DE_BUSCA }
@@ -45,7 +47,20 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
             }
 
             <Box flex={1} display="flex" justifyContent="end">
-                {mostrarBotaoNovo && (
+
+                { smDown && (
+                    <Button
+                        color="primary"
+                        disableElevation
+                        variant="contained"
+                        onClick={aoClicarEmNovo}
+                        endIcon={<Icon>add</Icon>}
+                    >
+                        {Environment.TEXTO_NOVO}
+                    </Button>
+                )}
+
+                {mostrarBotaoNovo && !smDown && (
                     <Button 
                         color="primary"
                         disableElevation

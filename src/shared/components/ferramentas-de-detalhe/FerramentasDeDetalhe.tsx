@@ -1,4 +1,5 @@
 import { Box, Button, Icon, Paper, Skeleton,  Theme,  useMediaQuery,  useTheme } from '@mui/material';
+import { Environment } from '../../environment';
 
 
 interface IFerramentasDeDetalheProps {
@@ -47,8 +48,8 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
 
 }) => {
     // configura o breakpoint para o tamanho do dispositivo
-    const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
-    // const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
+    const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down(425));
+    const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down(778));
     // configura o tema
     const theme = useTheme();
 
@@ -154,7 +155,21 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
                 </Button>
             )}
 
-            {(mostarBotaoNovo && !mostrarBotaoNovoCarregando && !smDown) && (
+
+            {(mdDown && !smDown) && (
+                <Button
+                    color="primary"
+                    disableElevation
+                    variant="outlined"
+                    onClick={aoClicarEmNovo}
+                    startIcon={<Icon>add</Icon>}
+                >
+                    {Environment.TEXTO_NOVO}
+                </Button>
+            )}
+
+
+            {(mostarBotaoNovo && !mostrarBotaoNovoCarregando && !smDown && !mdDown) && (
                 <Button
                     color="primary"
                     disableElevation

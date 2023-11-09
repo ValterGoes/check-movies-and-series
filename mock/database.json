@@ -31,14 +31,11 @@
       "sinopse": "A saga de uma família mafiosa italiana que luta para estabelecer sua supremacia nos Estados Unidos no após-guerra. Uma tentativa de assassinato deixa Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios. Sonny não tem a menor condição de manter a posição de seu pai e, por conta disso, uma guerra com as outras famílias da máfia se inicia. Enquanto isso, Michael cuida para que a família não entre em uma guerra de gangues."
     },
     {
-      "id": 4,
-      "imagem": "https://upload.wikimedia.org/wikipedia/pt/7/7b/Transformers_Poster.jpg",
       "titulo": "Transformers",
       "ano": 2007,
-      "genero": "Ação",
       "diretor": "Michael Bay",
-      "atores": "Shia LaBeouf, Megan Fox, Josh Duhamel",
-      "sinopse": "Dois clãs de robôs alienígenas robôs alienígenas transformam-se em veículos e outros dispositivos mecânicos e travam uma batalha, cujo o objetivo é a posse do \"Allspark\", um cubo de Cybertron que possibilita a quem o possui a conquista total do universo."
+      "sinopse": "Dois clãs de robôs alienígenas robôs alienígenas transformam-se em veículos e outros dispositivos mecânicos e travam uma batalha, cujo o objetivo é a posse do \"Allspark\", um cubo de Cybertron que possibilita a quem o possui a conquista total do universo.",
+      "id": 4
     },
     {
       "id": 5,

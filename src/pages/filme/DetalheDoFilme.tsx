@@ -1,29 +1,26 @@
-import { useEffect, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { Box, Grid, LinearProgress, Paper, Typography } from '@mui/material';
-import { FormHandles } from '@unform/core';
-import { Form } from '@unform/web';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { FilmesService } from '../../shared/services/api/filmes/FilmesService';
-import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
+import { VTextField, VForm, useVForm } from '../../shared/forms';
 import { FerramentasDeDetalhe } from '../../shared/components';
-import { VTextField } from '../../shared/forms/VTextField';
+import { LayoutBaseDePagina } from '../../shared/layouts';
 
 
 interface IFormData {
     id: number;
+    ano: number;
     imagem: string;
     titulo: string;
     diretor: string;
-    ano: number;
     sinopse: string;
 }
 
 export const DetalheDoFilme: React.FC = () => {
+    const { formRef, saveAndClose, isSaveAndClose } =  useVForm();
     const { id = 'novo' } = useParams<'id'>();
     const navigate = useNavigate();
-
-    const formRef = useRef<FormHandles>(null);
 
     const [isLoading, setIsLoading] = useState(false);
     const [titulo, setTitulo] = useState('');
@@ -46,6 +43,13 @@ export const DetalheDoFilme: React.FC = () => {
                         formRef.current?.setData(result);
                     }
                 });
+        } else {
+            formRef.current?.setData({
+                titulo: '',
+                ano: '',
+                diretor: '',
+                sinopse: ''
+            });
         }
     }, [id]);
     
@@ -62,8 +66,11 @@ export const DetalheDoFilme: React.FC = () => {
                     if (result instanceof Error) {
                         alert(result.message);
                     } else {
-                        // navigate('/filmes');
-                        navigate(`/filmes/detalhe/${result}`);
+                        if (isSaveAndClose()) {
+                            navigate('/filmes');
+                        } else {
+                            navigate(`/filmes/detalhe/${result}`);
+                        }
                     }
                 });
         } else {
@@ -74,7 +81,11 @@ export const DetalheDoFilme: React.FC = () => {
 
                     if (result instanceof Error) {
                         alert(result.message);
-                    } 
+                    } else {
+                        if (isSaveAndClose()) {
+                            navigate('/filmes');
+                        }
+                    }
                 });
             
         }
@@ -106,7 +117,7 @@ export const DetalheDoFilme: React.FC = () => {
                     mostarBotaoNovo={id !== 'novo'}               
                     mostarBotaoApagar={id !== 'novo'}
 
-                    aoClicarEmSalvar={() => formRef.current?.submitForm()}
+                    aoClicarEmSalvar={saveAndClose}
                     aoClicarEmVoltar={() => navigate('/filmes')}
                     aoClicarEmNovo={() => navigate('/filmes/detalhe/novo')}
                     aoClicarEmApagar={() => handleDelete(Number(id))}
@@ -114,7 +125,7 @@ export const DetalheDoFilme: React.FC = () => {
             }
         >
 
-            <Form ref={formRef} onSubmit={handleSave}>
+            <VForm ref={formRef} onSubmit={handleSave}>
 
                 <Box margin={1} display="flex" flexDirection="column" component={Paper} variant="outlined">
 
@@ -127,7 +138,7 @@ export const DetalheDoFilme: React.FC = () => {
                         )}
 
                         <Grid item>
-                            <Typography variant='h4'>Filme</Typography>
+                            <Typography variant='h4'>Detalhes do filme</Typography>
                         </Grid>
 
                         <Grid container item direction="row" spacing={2}>
@@ -176,7 +187,7 @@ export const DetalheDoFilme: React.FC = () => {
 
                 {/*adicionar campo para foto ou adicionar automaticamente ao adiconar o nome  */}
 
-            </Form>     
+            </VForm>     
 
         </LayoutBaseDePagina>
     );
