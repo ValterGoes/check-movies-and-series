@@ -4,19 +4,18 @@ import { Api } from '../axios-config';
 
 export interface IListagemFIlme {
     id: number;
-    imagem: string;
+    imagem: string | undefined;
     titulo: string;
     diretor: string;
-    ano: number;
+    ano: string;
     sinopse: string;
 }
 
 export interface IDetalheFilme {
-    id: number;
-    imagem: string;
+    id?: number;
+    ano: string;
     titulo: string;
     diretor: string;
-    ano: number;
     sinopse: string;
 }
 
@@ -73,11 +72,11 @@ const create = async ( dados: Omit<IDetalheFilme, 'id'>): Promise< number | Erro
 
         const { data } = await Api.post<IDetalheFilme>('/filmes', dados);
 
-        if (data) {
+        if (data && typeof data.id === 'number') {
             return data.id;
+        } else {
+            return new Error('Erro ao adicionar/criar o Filme!');
         }
-
-        return new Error('Erro ao adicionar/criar o Filme!');
 
     } catch (error) {
 

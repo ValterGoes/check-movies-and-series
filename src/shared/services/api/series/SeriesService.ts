@@ -4,19 +4,18 @@ import { Api } from '../axios-config';
 
 export interface IListagemSeries {
     id: number;
-    imagem: string;
+    ano: string;
+    imagem: string | undefined;
     titulo: string;
     diretor: string;
-    ano: number;
     sinopse: string;
 }
 
 export interface IDetalheSeries {
-    id: number;
-    imagem: string;
+    id?: number;
+    ano: string;
     titulo: string;
     diretor: string;
-    ano: number;
     sinopse: string;
 }
 
@@ -73,11 +72,11 @@ const create = async ( dados: Omit<IDetalheSeries, 'id'>): Promise< number | Err
 
         const { data } = await Api.post<IDetalheSeries>('/series', dados);
 
-        if (data) {
+        if (data && typeof data.id === 'number') {
             return data.id;
+        } else {
+            return new Error('Erro ao adicionar/criar a Série!');
         }
-
-        return new Error('Erro ao adicionar nova Série!');
 
     } catch (error) {
 

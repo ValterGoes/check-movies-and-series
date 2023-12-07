@@ -1,29 +1,34 @@
-import { useEffect, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { Box, Grid, LinearProgress, Paper, Typography } from '@mui/material';
-import { FormHandles } from '@unform/core';
-import { Form } from '@unform/web';
+import { useNavigate, useParams } from 'react-router-dom';
+import * as yup from 'yup';
 
 import { SeriesService } from '../../shared/services/api/series/SeriesService';
-import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
+import { VTextField, VForm, useVForm, IVFormErrors } from '../../shared/forms';
 import { FerramentasDeDetalhe } from '../../shared/components';
-import { VTextField } from '../../shared/forms/VTextField';
+import { LayoutBaseDePagina } from '../../shared/layouts';
 
 
 interface IFormData {
-    id: number;
-    imagem: string;
+    id?: number;
+    ano: string;
     titulo: string;
     diretor: string;
-    ano: number;
     sinopse: string;
 }
 
+const formValidationSchema: yup.SchemaOf<IFormData> = yup.object().shape({
+    id: yup.number().positive(),
+    ano: yup.string().required().min(4),
+    titulo: yup.string().required().min(4),
+    diretor: yup.string().required().min(4),
+    sinopse: yup.string().required()
+});
+
 export const DetalheDaSerie: React.FC = () => {
+    const { formRef, saveAndClose, isSaveAndClose } = useVForm();
     const { id = 'nova' } = useParams<'id'>();
     const navigate = useNavigate();
-
-    const formRef = useRef<FormHandles>(null);
 
     const [isLoading, setIsLoading] = useState(false);
     const [titulo, setTitulo] = useState('');
@@ -46,38 +51,68 @@ export const DetalheDaSerie: React.FC = () => {
                         formRef.current?.setData(result);
                     }
                 });
+        } else {
+            formRef.current?.setData({
+                titulo: '',
+                ano: '',
+                diretor: '',
+                sinopse: ''
+            });
         }
     }, [id]);
     
 
     const handleSave = (dados: IFormData) => {
-        setIsLoading(true);
+        formValidationSchema.
+            validate(dados, { abortEarly: false })
+            .then((dadosValidados) => {
+                setIsLoading(true);
 
-        if (id === 'nova') {
-            SeriesService
-                .create(dados)
-                .then((result) => {
-                    setIsLoading(false);
+                if (id === 'novo') {
+                    SeriesService
+                        .create(dadosValidados)
+                        .then((result) => {
+                            setIsLoading(false);
 
-                    if (result instanceof Error) {
-                        alert(result.message);
-                    } else {
-                        // navigate('/series');
-                        navigate(`/series/detalhe/${result}`);
-                    }
+                            if (result instanceof Error) {
+                                alert(result.message);
+                            } else {
+                                if (isSaveAndClose()) {
+                                    navigate('/series');
+                                } else {
+                                    navigate(`/series/detalhe/${result}`);
+                                }
+                            }
+                        });
+                } else {
+                    SeriesService
+                        .updateById(Number(id), dadosValidados)
+                        .then((result) => {
+                            setIsLoading(false);
+
+                            if (result instanceof Error) {
+                                alert(result.message);
+                            } else {
+                                if (isSaveAndClose()) {
+                                    navigate('/series');
+                                }
+                            }
+                        });
+
+                }
+            })
+            .catch((errors: yup.ValidationError) => {
+                const validationErrors: IVFormErrors = {};
+
+                errors.inner.forEach(error => {
+                    if (!error.path) return;
+
+                    validationErrors[error.path] = error.message;
                 });
-        } else {
-            SeriesService
-                .updateById(Number(id), dados)
-                .then((result) => {
-                    setIsLoading(false);
 
-                    if (result instanceof Error) {
-                        alert(result.message);
-                    }
-                });
+                formRef.current?.setErrors(validationErrors);
 
-        }
+            });
     };
 
     const handleDelete = (id: number) => {
@@ -106,7 +141,7 @@ export const DetalheDaSerie: React.FC = () => {
                     mostarBotaoNovo={id !== 'nova'}               
                     mostarBotaoApagar={id !== 'nova'}
 
-                    aoClicarEmSalvar={() => formRef.current?.submitForm()}
+                    aoClicarEmSalvar={saveAndClose}
                     aoClicarEmVoltar={() => navigate('/series')}
                     aoClicarEmNovo={() => navigate('/series/detalhe/nova')}
                     aoClicarEmApagar={() => handleDelete(Number(id))}
@@ -114,7 +149,7 @@ export const DetalheDaSerie: React.FC = () => {
             }
         >
 
-            <Form ref={formRef} onSubmit={handleSave}>
+            <VForm ref={formRef} onSubmit={handleSave}>
 
                 <Box margin={1} display="flex" flexDirection="column" component={Paper} variant="outlined">
 
@@ -176,7 +211,7 @@ export const DetalheDaSerie: React.FC = () => {
                                
                 {/*adicionar campo para foto ou adicionar automaticamente ao adiconar o nome  */}
 
-            </Form>      
+            </VForm>      
 
         </LayoutBaseDePagina>
     );
